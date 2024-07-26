@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 
@@ -173,7 +174,7 @@ public class NanaCharacter extends BasePlayer {
     public void doCharSelectScreenSelectEffect() {
 //        CardCrawlGame.sound.stop(AudioPatch.Sound_Karen_OnSelect);
 //        CardCrawlGame.sound.play(AudioPatch.Sound_Karen_OnSelect); // Sound Effect
-//        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT, false); // Screen
+        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT, false); // Screen
         // Effect
     }
 
