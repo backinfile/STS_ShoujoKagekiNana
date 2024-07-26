@@ -1,12 +1,15 @@
 {
 	"ShoujoKagekiNana:Strike": {
 		"NAME": "打击",
-		"DESCRIPTION": "造成 !M! 点伤害。"
+		"DESCRIPTION": "造成 !D! 点伤害。"
 	},
-
 	"ShoujoKagekiNana:Strike2": {
 		"NAME": "打击",
-		"DESCRIPTION": "造成 !M! 点伤害。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL Revue 。"
+	},
+	"ShoujoKagekiNana:RevuePassion": {
+		"NAME": "激情的Revue",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 目标 切换 Revue 姿态 。"
 	},
 	"ShoujoKageki_tmp:Promise": {
 		"NAME": "约定",

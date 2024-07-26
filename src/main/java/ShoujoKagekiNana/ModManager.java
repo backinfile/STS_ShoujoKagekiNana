@@ -14,10 +14,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.CharacterStrings;
-import com.megacrit.cardcrawl.localization.RelicStrings;
-import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -75,6 +72,8 @@ public class ModManager implements ISubscriber, EditStringsSubscriber, PostIniti
                 ModPath.getResPath("/localization/" + lang + "/UI-Strings.json"));
         BaseMod.loadCustomStringsFile(CharacterStrings.class,
                 ModPath.getResPath("/localization/" + lang + "/Character-Strings.json"));
+        BaseMod.loadCustomStringsFile(StanceStrings.class,
+                ModPath.getResPath("/localization/" + lang + "/Stance-Strings.json"));
 
         Log.logger.info("Done edittting strings");
     }

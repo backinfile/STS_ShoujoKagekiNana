@@ -3,6 +3,7 @@ package ShoujoKagekiNana.charactor;
 import ShoujoKagekiNana.Log;
 import ShoujoKagekiNana.Res;
 import ShoujoKagekiNana.ModPath;
+import ShoujoKagekiNana.cards.RevuePassion;
 import ShoujoKagekiNana.cards.Strike;
 import ShoujoKagekiNana.cards.Strike2;
 import ShoujoKagekiNana.relics.FrogWaterCupRelic;
@@ -153,7 +154,7 @@ public class NanaCharacter extends BasePlayer {
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
         // TODO
-//        retVal.add(ShineStrike.ID);
+        retVal.add(RevuePassion.ID);
 //        retVal.add(Defend.ID);
 //        retVal.add(Defend.ID);
 //        retVal.add(Defend.ID);

@@ -1,6 +1,7 @@
 package ShoujoKagekiNana.patches;
 
 import ShoujoKagekiNana.charactor.NanaCharacter;
+import ShoujoKagekiNana.stances.patches.StancePatches;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -9,10 +10,12 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.MathHelper;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
+import com.megacrit.cardcrawl.stances.NeutralStance;
 
 public class CharacterSelectScreenPatch {
-    private static final float START_X = Settings.WIDTH + 100 * Settings.xScale;
+    private static final float START_X = Settings.WIDTH + 600 * Settings.xScale;
     private static final float DEST_X = Settings.isMobile ? 160.0F * Settings.scale : 200.0F * Settings.scale + Settings.WIDTH * 0.55f;
 
     @SpirePatch2(
@@ -25,6 +28,17 @@ public class CharacterSelectScreenPatch {
             if (__instance.c instanceof NanaCharacter) {
                 ReflectionHacks.setPrivate(__instance, __instance.getClass(), "infoX", START_X);
             }
+        }
+    }
+
+    @SpirePatch2(
+            clz = AbstractMonster.class,
+            method = "die",
+            paramtypez = {boolean.class}
+    )
+    public static class _DiePatch {
+        public static void Postfix(AbstractMonster __instance) {
+            StancePatches.Field.stance.set(__instance, new NeutralStance());
         }
     }
 
