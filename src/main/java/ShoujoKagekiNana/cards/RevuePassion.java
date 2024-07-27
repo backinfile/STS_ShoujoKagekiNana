@@ -1,6 +1,7 @@
 package ShoujoKagekiNana.cards;
 
 import ShoujoKagekiNana.actions.CreatureSwitchStanceAction;
+import ShoujoKagekiNana.actions.DoIntentAction;
 import ShoujoKagekiNana.stances.RevueStance;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -25,9 +26,10 @@ public class RevuePassion extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBot(new CreatureSwitchStanceAction(m, RevueStance.STANCE_ID));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+//        addToBot(new CreatureSwitchStanceAction(m, RevueStance.STANCE_ID));
+        addToBot(new DoIntentAction(m));
+
     }
 
     @Override

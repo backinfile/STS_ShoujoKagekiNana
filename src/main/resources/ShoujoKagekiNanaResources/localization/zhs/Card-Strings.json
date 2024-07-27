@@ -5,11 +5,19 @@
 	},
 	"ShoujoKagekiNana:Strike2": {
 		"NAME": "打击",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL Revue 。"
+		"DESCRIPTION": "造成 !D! 点伤害。"
+	},
+	"ShoujoKagekiNana:Defend": {
+		"NAME": "防御",
+		"DESCRIPTION": "获得 !B! 点 格挡 。"
+	},
+	"ShoujoKagekiNana:Defend02": {
+		"NAME": "后空翻",
+		"DESCRIPTION": "获得 !B! 点 瞬间 格挡。"
 	},
 	"ShoujoKagekiNana:RevuePassion": {
 		"NAME": "激情的Revue",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 目标 切换 Revue 姿态 。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 发起 Revue 。"
 	},
 	"ShoujoKageki_tmp:Promise": {
 		"NAME": "约定",

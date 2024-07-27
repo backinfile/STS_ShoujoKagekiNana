@@ -30,6 +30,18 @@ public class CharacterSelectScreenPatch {
             }
         }
     }
+    @SpirePatch2(
+            clz = CharacterOption.class,
+            method = SpirePatch.CONSTRUCTOR,
+            paramtypez = {String.class, AbstractPlayer.class, String.class, String.class}
+    )
+    public static class _InitPatch2 {
+        public static void Postfix(CharacterOption __instance) {
+            if (__instance.c instanceof NanaCharacter) {
+                ReflectionHacks.setPrivate(__instance, __instance.getClass(), "infoX", START_X);
+            }
+        }
+    }
 
     @SpirePatch2(
             clz = AbstractMonster.class,

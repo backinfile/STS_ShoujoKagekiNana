@@ -4,20 +4,13 @@
     "NAMES": [
       "瞬间"
     ],
-    "DESCRIPTION": "瞬间的效果，会在下次打出非瞬间卡牌后消失。"
-  },
-  {
-    "PROPER_NAME": "切换",
-    "NAMES": [
-      "切换"
-    ],
-    "DESCRIPTION": "切换 #y姿态 ，如果未处于 #y姿态 则进入，如果处于 #y姿态 则退出。"
+    "DESCRIPTION": "具有瞬间的效果只能持续到下次打出卡牌后。"
   },
   {
     "PROPER_NAME": "Revue",
     "NAMES": [
       "revue"
     ],
-    "DESCRIPTION": "离开这一 #y姿态 时，立即 #r行动 。"
+    "DESCRIPTION": "目标敌人立即 #r行动 。"
   }
 ]
