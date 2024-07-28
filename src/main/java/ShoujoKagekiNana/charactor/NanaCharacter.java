@@ -3,6 +3,7 @@ package ShoujoKagekiNana.charactor;
 import ShoujoKagekiNana.Log;
 import ShoujoKagekiNana.Res;
 import ShoujoKagekiNana.ModPath;
+import ShoujoKagekiNana.auditionEnergy.DoubleEnergyOrb;
 import ShoujoKagekiNana.cards.RevuePassion;
 import ShoujoKagekiNana.cards.Strike;
 import ShoujoKagekiNana.cards.Strike2;
@@ -77,13 +78,15 @@ public class NanaCharacter extends BasePlayer {
             ModName + "Resources/images/char/orb/layer4d.png",
             ModName + "Resources/images/char/orb/layer5d.png",};
     public static final String orbVfxPath = ModName + "Resources/images/char/orb/vfx.png";
+    public static float[] layerSpeeds = new float[]{-20.0F, 20.0F, -40.0F, 40.0F, 360.0F};
 
     // =============== /TEXTURES OF BIG ENERGY ORB/ ===============
 
     // =============== CHARACTER CLASS START =================
 
     public NanaCharacter(String name, PlayerClass setClass) {
-        super(name, setClass, orbTextures, orbVfxPath, null, null, null);
+//        super(name, setClass, orbTextures, orbVfxPath, null, null, null);
+        super(name, setClass, new DoubleEnergyOrb(orbTextures, orbVfxPath, layerSpeeds, orbTextures, orbVfxPath), null, null);
 
         // =============== TEXTURES, ENERGY, LOADOUT =================
 

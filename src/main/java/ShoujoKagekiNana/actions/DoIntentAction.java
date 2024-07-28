@@ -20,13 +20,13 @@ public class DoIntentAction extends AbstractGameAction {
         if (creature instanceof AbstractMonster) {
             AbstractMonster m = (AbstractMonster) creature;
             if (!m.isDeadOrEscaped()) {
-                AbstractDungeon.actionManager.addToBottom(new ShowMoveNameAction(m));
-                AbstractDungeon.actionManager.addToBottom(new IntentFlashAction(m));
-                AbstractDungeon.actionManager.addToBottom(new InstantAction(() -> {
+                AbstractDungeon.actionManager.addToTop(new InstantAction(() -> {
                     m.takeTurn();
                     m.applyTurnPowers();
                     m.createIntent();
                 }));
+                AbstractDungeon.actionManager.addToTop(new IntentFlashAction(m));
+                AbstractDungeon.actionManager.addToTop(new ShowMoveNameAction(m));
             }
         }
         isDone = true;

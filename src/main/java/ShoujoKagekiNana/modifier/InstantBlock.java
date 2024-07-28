@@ -46,7 +46,9 @@ public class InstantBlock extends AbstractBlockModifier {
         int currentAmount = getCurrentAmount();
 
         addToBot(new InstantAction(() -> {
-            reduceThisBlockContainer(currentAmount);
+            addToBot(new InstantAction(() -> {
+                reduceThisBlockContainer(currentAmount);
+            }));
         }));
     }
 
