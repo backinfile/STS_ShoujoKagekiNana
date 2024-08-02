@@ -1,68 +1,94 @@
 package ShoujoKagekiNana;
 
+import basemod.BaseMod;
+import basemod.ModLabeledToggleButton;
+import basemod.ModPanel;
+import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.localization.UIStrings;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 import java.util.Properties;
 
+import static ShoujoKagekiNana.Res.BADGE_IMAGE;
+
 public class SettingsPanel {
-    public static boolean showDrawBagReview = false;
-    public static boolean showDisposedPile = true;
+    public static BoolToggleSettingValue test = new BoolToggleSettingValue("test", false, 350.0f, 650.0f);
 
+    private static final String CONFIG_FILE_NAME = "config";
+    private static final Properties settingsProperties = new Properties();
 
-    public static final String CONFIG_FILE_NAME = "config";
-    public static final Properties settingsProperties = new Properties();
+    private static final List<BoolToggleSettingValue> toggleSettingValueList = new ArrayList<>();
 
     public static void initProperties() {
-//        settingsProperties.setProperty("showDrawBagReview", "FALSE");
-//        settingsProperties.setProperty("showDisposedPile", "TRUE");
-//        try {
-//            SpireConfig config = new SpireConfig(ModPath.ModName, CONFIG_FILE_NAME, settingsProperties);
-//            config.load();
-//            showDrawBagReview = config.getBool("showDrawBagReview");
-//            showDisposedPile = config.getBool("showDisposedPile");
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        // collect settingValue
+
+        try {
+            for (Field field : SettingsPanel.class.getDeclaredFields()) {
+                if (Modifier.isStatic(field.getModifiers()) && field.getType() == BoolToggleSettingValue.class) {
+                    BoolToggleSettingValue value = (BoolToggleSettingValue) field.get(null);
+                    if (value != null) {
+                        toggleSettingValueList.add(value);
+                    }
+                }
+            }
+        } catch (IllegalAccessException e) {
+            Log.logger.error(e);
+        }
+
+
+        for (BoolToggleSettingValue value : toggleSettingValueList) {
+            settingsProperties.setProperty(value.name, String.valueOf(value.defaultValue));
+        }
+        try {
+            SpireConfig config = new SpireConfig(ModPath.ModName, CONFIG_FILE_NAME, settingsProperties);
+            config.load();
+            for (BoolToggleSettingValue value : toggleSettingValueList) {
+                value.set(config.getBool(value.name));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void saveProperties() {
-//        try {
-//            SpireConfig config = new SpireConfig(ModPath.ModName, CONFIG_FILE_NAME, settingsProperties);
-//            config.setBool("showDrawBagReview", showDrawBagReview);
-//            config.setBool("showDisposedPile", showDisposedPile);
-//            config.save();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            SpireConfig config = new SpireConfig(ModPath.ModName, CONFIG_FILE_NAME, settingsProperties);
+            for (BoolToggleSettingValue value : toggleSettingValueList) {
+                config.setBool(value.name, value.get());
+            }
+            config.save();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void initPanel() {
-//        UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModPath.makeID("settingsPanel"));
+        UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModPath.makeID("settingsPanel"));
+
+        ModPanel settingsPanel = new ModPanel();
+
+        for (BoolToggleSettingValue value : toggleSettingValueList) {
+            ModLabeledToggleButton btn = new ModLabeledToggleButton(
+                    uiStrings.TEXT_DICT.getOrDefault(value.name, "missing"), value.x, value.y,
+                    Settings.CREAM_COLOR, FontHelper.charDescFont,
+                    value.get(), settingsPanel, (label) -> {
+            },
+                    (button) -> {
+                        value.set(button.enabled);
+                        saveProperties();
+                    });
+            settingsPanel.addUIElement(btn);
+        }
 //
-//        ModPanel settingsPanel = new ModPanel();
-//
-//        // Create the on/off button:
-//        ModLabeledToggleButton showDrawBagReviewBtn = new ModLabeledToggleButton(
-//                uiStrings.TEXT[1], 350.0f, 650.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
-//                showDrawBagReview, settingsPanel, (label) -> {
-//        },
-//                (button) -> {
-//                    showDrawBagReview = button.enabled;
-//                    saveProperties();
-//                });
-//
-//        // Create the on/off button:
-//        ModLabeledToggleButton showDisposedPileBtn = new ModLabeledToggleButton(
-//                uiStrings.TEXT[2], 350.0f, 600.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
-//                showDisposedPile, settingsPanel, (label) -> {
-//        },
-//                (button) -> {
-//                    showDisposedPile = button.enabled;
-//                    saveProperties();
-//                });
-//
-//        settingsPanel.addUIElement(showDrawBagReviewBtn);
-//        settingsPanel.addUIElement(showDisposedPileBtn);
-//
-//        Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
-//        BaseMod.registerModBadge(badgeTexture, ModPath.ModName, ModPath.AUTHOR, ModPath.DESCRIPTION, settingsPanel);
+        Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
+        BaseMod.registerModBadge(badgeTexture, ModPath.ModName, ModPath.AUTHOR, ModPath.DESCRIPTION, settingsPanel);
     }
 }

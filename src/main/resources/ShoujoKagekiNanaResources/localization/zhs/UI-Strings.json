@@ -1,17 +1,31 @@
 {
-	"ShoujoKagekiNana:InstantBlock": {
-    "TEXT": ["瞬间格挡", "持续到下一张卡牌打出后，阻挡伤害。"],
-    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+  "ShoujoKagekiNana:InstantBlock": {
+    "TEXT": [
+      "瞬间格挡",
+      "持续到下一张卡牌打出后，阻挡伤害。"
+    ],
+    "EXTRA_TEXT": [
+      "demo EXTRA_TEXT"
+    ],
     "TEXT_DICT": {}
   },
   "ShoujoKagekiNana:AuditionEnergy": {
-    "TEXT": ["竞演能量", "另一种类型的能量，尽可以用来打出攻击牌。"],
-    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT": [
+      "竞演能量",
+      "另一种类型的能量，尽可以用来打出攻击牌。"
+    ],
+    "EXTRA_TEXT": [
+      "demo EXTRA_TEXT"
+    ],
     "TEXT_DICT": {}
   },
-	"CardRatingMod:settingsPanel": {
-    "TEXT": ["解锁进阶20", "显示抽取约定牌堆的预览", "在右上角显示耗尽牌堆"],
-    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
-    "TEXT_DICT": {}
+  "ShoujoKagekiNana:settingsPanel": {
+    "TEXT": [],
+    "EXTRA_TEXT": [
+      "demo EXTRA_TEXT"
+    ],
+    "TEXT_DICT": {
+      "test": "test btn"
+    }
   }
 }
