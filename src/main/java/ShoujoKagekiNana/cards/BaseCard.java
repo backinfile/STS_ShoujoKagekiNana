@@ -2,7 +2,9 @@ package ShoujoKagekiNana.cards;
 
 import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.charactor.NanaCharacter;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.mod.stslib.patches.FlavorText;
 import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
 import com.evacipated.cardcrawl.modthespire.lib.SpireSuper;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -53,6 +55,8 @@ public abstract class BaseCard extends AbstractDefaultCard {
         this.rawDescription = DESCRIPTION;
         this.initializeTitle();
         this.initializeDescription();
+
+        FlavorText.AbstractCardFlavorFields.boxColor.set(this, Color.GRAY.cpy());
     }
 
     @Override

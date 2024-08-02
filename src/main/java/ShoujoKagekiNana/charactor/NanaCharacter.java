@@ -4,7 +4,8 @@ import ShoujoKagekiNana.Log;
 import ShoujoKagekiNana.Res;
 import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.auditionEnergy.DoubleEnergyOrb;
-import ShoujoKagekiNana.cards.RevuePassion;
+import ShoujoKagekiNana.cards.Defend;
+import ShoujoKagekiNana.cards.DesireRevue;
 import ShoujoKagekiNana.cards.Strike;
 import ShoujoKagekiNana.cards.Strike2;
 import ShoujoKagekiNana.relics.FrogWaterCupRelic;
@@ -157,11 +158,11 @@ public class NanaCharacter extends BasePlayer {
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
         // TODO
-        retVal.add(RevuePassion.ID);
-//        retVal.add(Defend.ID);
-//        retVal.add(Defend.ID);
-//        retVal.add(Defend.ID);
-//        retVal.add(Defend.ID);
+        retVal.add(DesireRevue.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
 //        retVal.add(Fall.ID);
         return retVal;
     }
