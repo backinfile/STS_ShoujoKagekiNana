@@ -1,5 +1,6 @@
 package ShoujoKagekiNana.cards;
 
+import ShoujoKagekiNana.actions.StageRemoveAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -27,6 +28,8 @@ public class Strike extends BaseCard {
 //        addToBot(new RunEffectAction(new SimpleNodeVisitor()));
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+
+//        addToBot(new StageRemoveAction());
     }
 
     @Override

@@ -61,14 +61,14 @@
         <!--                    <systemPath>${Steam.path}/workshop/content/646570/2779256818/Goldenglow.jar</systemPath>-->
         <!--                    &lt;!&ndash;<systemPath>${basedir}/../lib/BaseMod.jar</systemPath>&ndash;&gt;-->
         <!--                </dependency>-->
-        <!--                <dependency>-->
-        <!--                    <groupId>mod-group-name</groupId>-->
-        <!--                    <artifactId>loadout</artifactId>-->
-        <!--                    <version>4.1.16</version>-->
-        <!--                    <scope>system</scope>-->
-        <!--                    <systemPath>${Steam.path}/workshop/content/646570/2814267979/loadout.jar</systemPath>-->
-        <!--                    &lt;!&ndash;<systemPath>${basedir}/../lib/BaseMod.jar</systemPath>&ndash;&gt;-->
-        <!--                </dependency>-->
+                        <dependency>
+                            <groupId>mod-group-name</groupId>
+                            <artifactId>loadout</artifactId>
+                            <version>4.1.16</version>
+                            <scope>system</scope>
+                            <systemPath>${Steam.path}/workshop/content/646570/2814267979/loadout.jar</systemPath>
+                            <!--<systemPath>${basedir}/../lib/BaseMod.jar</systemPath>-->
+                        </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl.mod</groupId>
             <artifactId>StSLib</artifactId>
