@@ -17,7 +17,7 @@
     }
   },
   "ShoujoKagekiNana:TopPanelDisposedPileBtn": {
-    "TEXT": ["命运的舞台", "查看当前牌池的所有卡牌。", " NL #y无法触及 的牌共有 #y", "张，不在这里显示。" ],
+    "TEXT": ["命运的舞台", "查看当前牌池的所有卡牌。", " NL #y无法触及 的牌共有 #y", " 张，不在这里显示。" ],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },

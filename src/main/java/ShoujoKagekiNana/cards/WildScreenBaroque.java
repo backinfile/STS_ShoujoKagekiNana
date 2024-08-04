@@ -21,6 +21,7 @@ public class WildScreenBaroque extends BaseCard {
         super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = 15;
         DisposableVariable.setBaseValue(this, 9);
+        exhaust = true;
     }
 
     @Override
