@@ -1,5 +1,6 @@
 package ShoujoKagekiNana.stagePool;
 
+import ShoujoKagekiCore.token.TokenCardField;
 import ShoujoKagekiNana.Log;
 import ShoujoKagekiNana.util.Util;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -27,6 +28,9 @@ public class StagePoolManager {
     public static void loadCardPool(SaveFile saveFile) {
         cardPool.clear();
         AbstractDungeon.player.getCardPool(cardPool);
+        for (AbstractCard card : cardPool) {
+            TokenCardField.isToken.set(card, false);
+        }
         Log.logger.info("load card pool count = {}", cardPool.size());
     }
 
@@ -84,7 +88,7 @@ public class StagePoolManager {
         }
         ArrayList<AbstractCard> copy = new ArrayList<>();
         for (AbstractCard card : result) {
-            copy.add(card.makeCopy());
+            copy.add(card.makeStatEquivalentCopy());
         }
         return copy;
     }

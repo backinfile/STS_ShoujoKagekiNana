@@ -2,6 +2,7 @@ package ShoujoKagekiNana.cards.tmp;
 
 import ShoujoKagekiNana.actions.StartRevueAction;
 import ShoujoKagekiNana.cards.BaseCard;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static ShoujoKagekiNana.ModPath.makeID;
 
+@AutoAdd.Ignore
 public class DesireRevue extends BaseCard {
     public static final String ID = makeID(DesireRevue.class.getSimpleName());
 

@@ -3,12 +3,14 @@ package ShoujoKagekiNana.cards.tmp;
 import ShoujoKagekiNana.actions.DrawAttackCardAction;
 import ShoujoKagekiNana.actions.StartRevueAction;
 import ShoujoKagekiNana.cards.BaseCard;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static ShoujoKagekiNana.ModPath.makeID;
 
+@AutoAdd.Ignore
 public class ProudRevue extends BaseCard {
     public static final String ID = makeID(ProudRevue.class.getSimpleName());
 

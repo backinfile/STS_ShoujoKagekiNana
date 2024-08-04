@@ -1,9 +1,11 @@
-package ShoujoKagekiNana.cards.starter;
+package ShoujoKagekiNana.cards;
 
-import ShoujoKagekiNana.cards.BaseCard;
+import ShoujoKagekiCore.shine.DisposableVariable;
+import ShoujoKagekiNana.actions.StageCardPowerUpAction;
+import ShoujoKagekiNana.modifiers.AddDamageModifier;
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,27 +14,26 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static ShoujoKagekiNana.ModPath.makeID;
 
 
-public class Strike extends BaseCard {
-    public static final String ID = makeID(Strike.class.getSimpleName());
+public class WildScreenBaroque extends BaseCard {
+    public static final String ID = makeID(WildScreenBaroque.class.getSimpleName());
 
-    public Strike() {
-        super(ID, 1, AbstractCard.CardType.ATTACK, AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.ENEMY);
-        baseDamage = 6;
-
-        this.tags.add(AbstractCard.CardTags.STRIKE);
-        this.tags.add(AbstractCard.CardTags.STARTER_STRIKE);
+    public WildScreenBaroque() {
+        super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
+        baseDamage = 15;
+        DisposableVariable.setBaseValue(this, 9);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new StageCardPowerUpAction(c -> CardModifierManager.addModifier(c, new AddDamageModifier())));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(3);
+            upgradeDamage(5);
             initializeDescription();
         }
     }

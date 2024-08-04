@@ -125,9 +125,16 @@ public class TopPanelDisposedPileBtn extends TopPanelItem {
         if (this.getHitbox().hovered) {
             sb.setColor(Color.CYAN);
             if (!isOpen) {
-                TipHelper.renderGenericTip(TOP_RIGHT_TIP_X, TIP_Y, TEXT[0], TEXT[1]);
+                TipHelper.renderGenericTip(TOP_RIGHT_TIP_X, TIP_Y, TEXT[0], getTipDescription());
             }
         }
+    }
+
+    private static String getTipDescription() {
+        if (StagePoolManager.stage_remove_count <= 0) {
+            return TEXT[1];
+        }
+        return TEXT[1] + TEXT[2] + StagePoolManager.stage_remove_count + TEXT[3];
     }
 
     private boolean isOkToClick() {

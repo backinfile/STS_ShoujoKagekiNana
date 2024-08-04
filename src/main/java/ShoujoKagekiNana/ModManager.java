@@ -74,6 +74,9 @@ public class ModManager implements ISubscriber, EditStringsSubscriber, PostIniti
                 ModPath.getResPath("/localization/" + lang + "/Character-Strings.json"));
         BaseMod.loadCustomStringsFile(StanceStrings.class,
                 ModPath.getResPath("/localization/" + lang + "/Stance-Strings.json"));
+        BaseMod.loadCustomStringsFile(PowerStrings.class,
+                ModPath.getResPath("/localization/" + lang + "/Power-Strings.json"));
+
 
         Log.logger.info("Done edittting strings");
     }

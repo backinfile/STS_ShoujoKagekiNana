@@ -1,19 +1,14 @@
-package ShoujoKagekiNana.modifier;
+package ShoujoKagekiNana.modifiers;
 
 import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.TextureLoader;
 import ShoujoKagekiNana.actions.InstantAction;
-import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.GainCustomBlockAction;
 import com.evacipated.cardcrawl.mod.stslib.blockmods.AbstractBlockModifier;
-import com.evacipated.cardcrawl.mod.stslib.blockmods.BlockModifierManager;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.UIStrings;
 
 public class InstantBlock extends AbstractBlockModifier {

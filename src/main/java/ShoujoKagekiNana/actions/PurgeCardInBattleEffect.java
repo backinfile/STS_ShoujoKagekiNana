@@ -23,7 +23,7 @@ public class PurgeCardInBattleEffect extends AbstractGameEffect {
     private static final float PADDING;
     private float scaleY;
     private Color rarityColor;
-    private static final float DURATION = 1.0F;
+    public static final float DURATION = 1.0F;
     private static final float HALF_DURATION = 0.5F;
 
     public PurgeCardInBattleEffect(AbstractCard card) {
