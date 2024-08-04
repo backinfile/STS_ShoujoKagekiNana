@@ -39,7 +39,13 @@
 		"DESCRIPTION": "从3张随机牌中选择1张加入手牌，获得与其耗能相等的 [E] 。 NL 消耗 。",
 		"FLAVOR": ""
 	},
-	"ShoujoKageki_tmp:Promise": {
+	"ShoujoKagekiNana:OutOfStory": {
+		"NAME": "剧本之外",
+		"DESCRIPTION": "从3张随机牌中选择1张加入手牌。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "从3张随机牌中选择1张加入手牌。",
+		"FLAVOR": "这次的再演是怎么回事呢？全是未经历过的事情。"
+	},
+	"D_ShoujoKageki:Promise": {
 		"NAME": "约定",
 		"DESCRIPTION": "不能被打出 。 NL 回合开始时如果在 约定牌堆 中，获得 [E]",
 		"UPGRADE_DESCRIPTION": "不能被打出 。 NL 回合开始时如果在 约定牌堆 中，获得 [E] [E]",

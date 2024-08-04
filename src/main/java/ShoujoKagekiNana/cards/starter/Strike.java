@@ -1,9 +1,9 @@
-package ShoujoKagekiNana.cards;
+package ShoujoKagekiNana.cards.starter;
 
-import ShoujoKagekiCore.shine.DisposableField;
-import ShoujoKagekiCore.shine.DisposableVariable;
+import ShoujoKagekiNana.cards.BaseCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,14 +12,15 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static ShoujoKagekiNana.ModPath.makeID;
 
 
-public class ShineStrike extends BaseCard {
-    public static final String ID = makeID(ShineStrike.class.getSimpleName());
+public class Strike extends BaseCard {
+    public static final String ID = makeID(Strike.class.getSimpleName());
 
-    public ShineStrike() {
-        super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
-        baseDamage = 9;
-        this.tags.add(CardTags.STRIKE);
-        DisposableVariable.setBaseValue(this, 9);
+    public Strike() {
+        super(ID, 1, AbstractCard.CardType.ATTACK, AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.ENEMY);
+        baseDamage = 6;
+
+        this.tags.add(AbstractCard.CardTags.STRIKE);
+        this.tags.add(AbstractCard.CardTags.STARTER_STRIKE);
     }
 
     @Override
@@ -35,7 +36,8 @@ public class ShineStrike extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeDamage(3);
+            initializeDescription();
         }
     }
 }

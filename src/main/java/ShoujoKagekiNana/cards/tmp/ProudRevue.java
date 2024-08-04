@@ -1,7 +1,8 @@
-package ShoujoKagekiNana.cards;
+package ShoujoKagekiNana.cards.tmp;
 
 import ShoujoKagekiNana.actions.DrawAttackCardAction;
 import ShoujoKagekiNana.actions.StartRevueAction;
+import ShoujoKagekiNana.cards.BaseCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -12,7 +13,7 @@ public class ProudRevue extends BaseCard {
     public static final String ID = makeID(ProudRevue.class.getSimpleName());
 
     public ProudRevue() {
-        super(ID, 1, CardType.SKILL, AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.ENEMY);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 1;
     }
 

@@ -1,14 +1,11 @@
-package ShoujoKagekiNana.cards;
+package ShoujoKagekiNana.cards.tmp;
 
 import ShoujoKagekiNana.ModPath;
+import ShoujoKagekiNana.cards.BaseCard;
 import ShoujoKagekiNana.modifier.InstantBlock;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.GainCustomBlockAction;
 import com.evacipated.cardcrawl.mod.stslib.blockmods.BlockModifierManager;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Defend02 extends BaseCard {

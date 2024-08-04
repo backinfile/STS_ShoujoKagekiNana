@@ -1,5 +1,7 @@
-package ShoujoKagekiNana.cards;
+package ShoujoKagekiNana.cards.starter;
 
+import ShoujoKagekiCore.shine.DisposableVariable;
+import ShoujoKagekiNana.cards.BaseCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -10,15 +12,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static ShoujoKagekiNana.ModPath.makeID;
 
 
-public class Strike2 extends BaseCard {
-    public static final String ID = makeID(Strike2.class.getSimpleName());
+public class ShineStrike extends BaseCard {
+    public static final String ID = makeID(ShineStrike.class.getSimpleName());
 
-    public Strike2() {
+    public ShineStrike() {
         super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
-        baseDamage = 6;
-
+        baseDamage = 9;
         this.tags.add(CardTags.STRIKE);
-        this.tags.add(CardTags.STARTER_STRIKE);
+        DisposableVariable.setBaseValue(this, 9);
     }
 
     @Override
@@ -26,14 +27,15 @@ public class Strike2 extends BaseCard {
 //        addToBot(new RunEffectAction(new SimpleNodeVisitor()));
         AbstractDungeon.actionManager.addToBottom(
                 new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+
+//        addToBot(new StageRemoveAction());
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(3);
-            initializeDescription();
+            upgradeBaseCost(0);
         }
     }
 }

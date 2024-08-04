@@ -12,7 +12,6 @@ public class IKnown extends BaseCard {
 
     public IKnown() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
-        this.tags.add(CardTags.STARTER_DEFEND);
         exhaust = true;
     }
 

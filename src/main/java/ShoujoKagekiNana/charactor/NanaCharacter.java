@@ -5,7 +5,10 @@ import ShoujoKagekiNana.Log;
 import ShoujoKagekiNana.Res;
 import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.auditionEnergy.DoubleEnergyOrb;
-import ShoujoKagekiNana.cards.*;
+import ShoujoKagekiNana.cards.starter.Defend;
+import ShoujoKagekiNana.cards.starter.OutOfStory;
+import ShoujoKagekiNana.cards.starter.ShineStrike;
+import ShoujoKagekiNana.cards.starter.Strike;
 import ShoujoKagekiNana.relics.ShineRelic;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -160,7 +163,7 @@ public class NanaCharacter extends BasePlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
-        retVal.add(DesireRevue.ID);
+        retVal.add(OutOfStory.ID);
         return retVal;
     }
 
@@ -222,7 +225,7 @@ public class NanaCharacter extends BasePlayer {
     // Which card should be obtainable from the Match and Keep event?
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Strike2();
+        return new ShineStrike();
     }
 
     // The class name as it appears next to your player name in-game
