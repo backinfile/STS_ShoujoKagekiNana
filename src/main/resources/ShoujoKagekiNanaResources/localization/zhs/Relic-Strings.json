@@ -1,9 +1,9 @@
 {
-	"ShoujoKagekiNana:FrogWaterCupRelic": {
-		"NAME": "剧本",
-		"FLAVOR": "由我们99期生全员打造的，只属于我们的舞台，无法忘记的永恒瞬间。",
+	"ShoujoKagekiNana:ShineRelic": {
+		"NAME": "舞台少女的闪耀",
+		"FLAVOR": "明明已经触及了，但仍然感到耀眼。",
 		"DESCRIPTIONS": [
-			"啦啦啦"
+			"每场战斗仅一次，打出 闪耀 牌后，获得 [E] ，抽1张牌。"
 		]
 	}
 }

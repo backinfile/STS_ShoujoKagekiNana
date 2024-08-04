@@ -3,29 +3,32 @@
     "TEXT": [
       "瞬间格挡",
       "持续到下一张卡牌打出后，阻挡伤害。"
-    ],
-    "EXTRA_TEXT": [
-      "demo EXTRA_TEXT"
-    ],
-    "TEXT_DICT": {}
+    ]
   },
   "ShoujoKagekiNana:AuditionEnergy": {
     "TEXT": [
       "竞演能量",
       "另一种类型的能量，尽可以用来打出攻击牌。"
-    ],
-    "EXTRA_TEXT": [
-      "demo EXTRA_TEXT"
-    ],
-    "TEXT_DICT": {}
+    ]
   },
   "ShoujoKagekiNana:settingsPanel": {
-    "TEXT": [],
-    "EXTRA_TEXT": [
-      "demo EXTRA_TEXT"
-    ],
     "TEXT_DICT": {
       "test": "test btn"
     }
+  },
+  "ShoujoKagekiNana:TopPanelDisposedPileBtn": {
+    "TEXT": ["当前牌池", "查看当前牌池的所有卡牌。", "耗尽牌堆为空。" ],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKagekiNana:StagePoolPilePatch": {
+    "TEXT": ["正在查看当前牌池。", "返回"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
+  },
+  "ShoujoKagekiNana:DisposableKeyword": {
+    "TEXT": ["", " NL 闪耀 !ShoujoKageki:disposable! 。", " NL {!ShoujoKageki:disposable!|@=闪耀 !ShoujoKageki:disposable! |<0=永远闪耀 }。{@@}"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
   }
 }

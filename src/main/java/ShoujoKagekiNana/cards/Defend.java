@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Defend extends BaseCard {
     public static final String ID = ModPath.makeID(Defend.class.getSimpleName());
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public Defend() {
         super(ID, 1, CardType.SKILL, AbstractCard.CardRarity.BASIC, CardTarget.NONE);

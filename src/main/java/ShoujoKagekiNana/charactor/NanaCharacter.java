@@ -8,7 +8,7 @@ import ShoujoKagekiNana.cards.Defend;
 import ShoujoKagekiNana.cards.DesireRevue;
 import ShoujoKagekiNana.cards.Strike;
 import ShoujoKagekiNana.cards.Strike2;
-import ShoujoKagekiNana.relics.FrogWaterCupRelic;
+import ShoujoKagekiNana.relics.ShineRelic;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -170,7 +170,7 @@ public class NanaCharacter extends BasePlayer {
     // Starting Relics
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(FrogWaterCupRelic.ID);
+        retVal.add(ShineRelic.ID);
         return retVal;
     }
 

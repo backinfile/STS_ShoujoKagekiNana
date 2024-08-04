@@ -40,7 +40,21 @@ public class CardPoolPatch {
 
             @Override
             public void onLoad(Integer integer) {
+                if (integer == null) integer = 0;
                 StagePoolManager.rng = new Random(Settings.seed, integer);
+            }
+        });
+
+        BaseMod.addSaveField(ModPath.makeID("stage_pool_remove_cnt"), new CustomSavable<Integer>() {
+            @Override
+            public Integer onSave() {
+                return StagePoolManager.stage_remove_count;
+            }
+
+            @Override
+            public void onLoad(Integer integer) {
+                if (integer == null) integer = 0;
+                StagePoolManager.stage_remove_count = integer;
             }
         });
     }

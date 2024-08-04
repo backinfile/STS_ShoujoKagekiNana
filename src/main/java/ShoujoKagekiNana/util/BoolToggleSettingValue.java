@@ -1,6 +1,4 @@
-package ShoujoKagekiNana;
-
-import ShoujoKagekiNana.SettingsPanel;
+package ShoujoKagekiNana.util;
 
 public class BoolToggleSettingValue {
     public final String name;

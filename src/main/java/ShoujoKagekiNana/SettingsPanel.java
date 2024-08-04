@@ -1,5 +1,6 @@
 package ShoujoKagekiNana;
 
+import ShoujoKagekiNana.util.BoolToggleSettingValue;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;

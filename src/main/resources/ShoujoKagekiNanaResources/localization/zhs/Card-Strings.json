@@ -30,6 +30,11 @@
 		"DESCRIPTION": "抽 !M! 张攻击牌。 NL 发起 Revue 。",
 		"FLAVOR": "选拔的合格者能获得成为Top Star的资格，不合格者将会失去舞台少女的 #y闪耀 。"
 	},
+	"ShoujoKagekiNana:IKnown": {
+		"NAME": "我全都知道哦",
+		"DESCRIPTION": "从3张随机牌中选择1张加入手牌，获得与其耗能相等的 [E] 。 NL 消耗 。",
+		"FLAVOR": ""
+	},
 	"ShoujoKageki_tmp:Promise": {
 		"NAME": "约定",
 		"DESCRIPTION": "不能被打出 。 NL 回合开始时如果在 约定牌堆 中，获得 [E]",

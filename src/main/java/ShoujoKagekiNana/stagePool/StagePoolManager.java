@@ -1,6 +1,7 @@
 package ShoujoKagekiNana.stagePool;
 
 import ShoujoKagekiNana.Log;
+import ShoujoKagekiNana.util.Util;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.random.Random;
@@ -9,10 +10,14 @@ import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class StagePoolManager {
-    private static final ArrayList<AbstractCard> cardPool = new ArrayList<>();
+    public static final ArrayList<AbstractCard> cardPool = new ArrayList<>();
     private static final LinkedList<AbstractCard> cardQueueInBattle = new LinkedList<>();
+
+    public static int stage_remove_count = 0;
 
     public static Random rng;
 
@@ -56,23 +61,32 @@ public class StagePoolManager {
         refreshCardQueue();
     }
 
-    public static void removeCard(AbstractCard card) {
-
+    public static void removeCard(AbstractCard remove) {
+        Util.removeFirst(cardPool, c -> c.cardID.equals(remove.cardID));
+        Util.removeFirst(cardQueueInBattle, c -> c.cardID.equals(remove.cardID));
+        initializeCardPools();
+        stage_remove_count++;
     }
 
     public static ArrayList<AbstractCard> popCard(int number) {
         ArrayList<AbstractCard> result = new ArrayList<>();
-
         while (result.size() < number) {
-            if (cardQueueInBattle.isEmpty()) {
+            if (!isContainerHasAnyMoreCard(cardQueueInBattle, result)) {
                 refreshCardQueue();
+                if (!isContainerHasAnyMoreCard(cardQueueInBattle, result)) {
+                    break; // TODO add curse
+                }
             }
             AbstractCard card = cardQueueInBattle.pop();
             if (result.stream().noneMatch(c -> c.cardID.equals(card.cardID))) {
                 result.add(card);
             }
         }
-        return result;
+        ArrayList<AbstractCard> copy = new ArrayList<>();
+        for (AbstractCard card : result) {
+            copy.add(card.makeCopy());
+        }
+        return copy;
     }
 
 
@@ -85,4 +99,9 @@ public class StagePoolManager {
         Log.logger.info("refreshCardQueue cardQueueInBattle = {}", cardQueueInBattle.size());
         Collections.shuffle(cardQueueInBattle, new java.util.Random(rng.randomLong()));
     }
+
+    private static boolean isContainerHasAnyMoreCard(List<AbstractCard> container, List<AbstractCard> result) {
+        return !container.stream().allMatch(c -> result.stream().anyMatch(r -> r.cardID.equals(c.cardID)));
+    }
+
 }
