@@ -1,8 +1,7 @@
-package ShoujoKagekiNana.ui;
+package ShoujoKagekiNana.stagePool;
 
 import ShoujoKagekiNana.ModPath;
-import ShoujoKagekiNana.stagePool.StagePoolManager;
-import ShoujoKagekiNana.ui.patches.StagePoolPilePatch;
+import ShoujoKagekiNana.stagePool.patches.StagePoolPilePatch;
 import basemod.TopPanelItem;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -42,7 +41,7 @@ public class TopPanelDisposedPileBtn extends TopPanelItem {
 
     public TopPanelDisposedPileBtn() {
         super(IMG, ID);
-        this.setX(Settings.WIDTH - (64f + 10f) * 4 * Settings.scale);
+        this.setX(Settings.WIDTH - (64f + 10f) * 5 * Settings.scale);
         this.setY(Settings.HEIGHT - 64.0F * Settings.scale);
     }
 

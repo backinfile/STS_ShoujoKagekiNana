@@ -1,5 +1,6 @@
 package ShoujoKagekiNana.relics;
 
+import ShoujoKagekiCore.base.BaseRelic;
 import ShoujoKagekiNana.ModPath;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -7,11 +8,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class ShineRelic extends BaseRelic {
-    public static final String RAW_ID = ShineRelic.class.getSimpleName();
-    public static final String ID = ModPath.makeID(RAW_ID);
+    public static final String ID = ModPath.makeID(ShineRelic.class.getSimpleName());
 
     public ShineRelic() {
-        super(ID, RAW_ID, RelicTier.STARTER, LandingSound.FLAT);
+        super(ID, RelicTier.STARTER, LandingSound.FLAT);
     }
 
     @Override

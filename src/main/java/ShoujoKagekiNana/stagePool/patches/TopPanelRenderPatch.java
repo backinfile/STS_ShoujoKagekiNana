@@ -1,8 +1,7 @@
-package ShoujoKagekiNana.ui.patches;
+package ShoujoKagekiNana.stagePool.patches;
 
-import ShoujoKagekiNana.SettingsPanel;
 import ShoujoKagekiNana.charactor.NanaCharacter;
-import ShoujoKagekiNana.ui.TopPanelDisposedPileBtn;
+import ShoujoKagekiNana.stagePool.TopPanelDisposedPileBtn;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

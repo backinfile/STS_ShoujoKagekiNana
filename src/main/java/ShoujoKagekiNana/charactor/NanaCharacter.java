@@ -1,13 +1,11 @@
 package ShoujoKagekiNana.charactor;
 
+import ShoujoKagekiCore.base.BasePlayer;
 import ShoujoKagekiNana.Log;
 import ShoujoKagekiNana.Res;
 import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.auditionEnergy.DoubleEnergyOrb;
-import ShoujoKagekiNana.cards.Defend;
-import ShoujoKagekiNana.cards.DesireRevue;
-import ShoujoKagekiNana.cards.Strike;
-import ShoujoKagekiNana.cards.Strike2;
+import ShoujoKagekiNana.cards.*;
 import ShoujoKagekiNana.relics.ShineRelic;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -157,13 +155,12 @@ public class NanaCharacter extends BasePlayer {
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
-        // TODO
+        retVal.add(ShineStrike.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
         retVal.add(DesireRevue.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-//        retVal.add(Fall.ID);
         return retVal;
     }
 

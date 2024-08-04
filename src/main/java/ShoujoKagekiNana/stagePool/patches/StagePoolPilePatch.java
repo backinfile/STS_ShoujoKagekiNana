@@ -1,4 +1,4 @@
-package ShoujoKagekiNana.ui.patches;
+package ShoujoKagekiNana.stagePool.patches;
 
 import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.stagePool.StagePoolManager;

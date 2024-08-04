@@ -1,7 +1,7 @@
 package ShoujoKagekiNana;
 
+import ShoujoKagekiCore.base.SharedRelic;
 import ShoujoKagekiNana.charactor.NanaCharacter;
-import ShoujoKagekiNana.relics.SharedRelic;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
