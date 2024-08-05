@@ -1,10 +1,8 @@
 package ShoujoKagekiNana.cards;
 
 import ShoujoKagekiCore.shine.DisposableVariable;
-import ShoujoKagekiNana.actions.InstantAction;
-import ShoujoKagekiNana.actions.StageCardPowerUpAction;
+import ShoujoKagekiNana.actions.DamageCallbackAction;
 import ShoujoKagekiNana.actions.StageCardSinglePowerUpAction;
-import com.evacipated.cardcrawl.mod.stslib.actions.common.DamageCallbackAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;

@@ -1,16 +1,5 @@
 package ShoujoKagekiNana.patches;
 
-import ShoujoKagekiNana.Log;
-import ShoujoKagekiNana.charactor.NanaCharacter;
-import basemod.ReflectionHacks;
-import com.evacipated.cardcrawl.mod.stslib.blockmods.AbstractBlockModifier;
-import com.evacipated.cardcrawl.mod.stslib.blockmods.BlockInstance;
-import com.evacipated.cardcrawl.mod.stslib.blockmods.BlockModifierManager;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.screens.charSelect.CharacterOption;
 
 import java.util.List;
 

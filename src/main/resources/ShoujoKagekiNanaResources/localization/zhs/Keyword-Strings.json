@@ -1,34 +1,29 @@
 [
   {
-    "PROPER_NAME": "瞬间",
     "NAMES": [
       "瞬间"
     ],
     "DESCRIPTION": "具有瞬间的效果只能持续到下次打出卡牌后。"
   },
   {
-    "PROPER_NAME": "Revue",
     "NAMES": [
       "revue"
     ],
     "DESCRIPTION": "获得2点 #y竞演能量 ，然后目标敌人立即 #r行动 。"
   },
   {
-    "PROPER_NAME": "竞演能量",
     "NAMES": [
       "竞演能量"
     ],
     "DESCRIPTION": "另一种类型的能量，仅可以用来打出攻击牌。"
   },
   {
-    "PROPER_NAME": "无法触及",
     "NAMES": [
       "无法触及"
     ],
     "DESCRIPTION": "无法触及的牌不会出现在卡牌奖励中，不会出现在商店中，不会在战斗中被创建。"
   },
   {
-    "PROPER_NAME": "发现",
     "NAMES": [
       "发现"
     ],

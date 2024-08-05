@@ -30,5 +30,10 @@
     "TEXT": ["", " NL 闪耀 !ShoujoKageki:disposable! 。", " NL {!ShoujoKageki:disposable!|@=闪耀 !ShoujoKageki:disposable! |<0=永远闪耀 }。{@@}"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
+  },
+  "ShoujoKagekiNana:StagePowerUpModifier": {
+    "TEXT": ["舞台增益", "伤害增加 #y", " NL 格挡 增加 #y", " 。"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
   }
 }
