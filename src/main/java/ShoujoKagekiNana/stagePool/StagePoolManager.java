@@ -2,16 +2,15 @@ package ShoujoKagekiNana.stagePool;
 
 import ShoujoKagekiCore.token.TokenCardField;
 import ShoujoKagekiNana.Log;
+import ShoujoKagekiNana.stagePool.patches.StagePoolPatch;
 import ShoujoKagekiNana.util.Util;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class StagePoolManager {
@@ -22,12 +21,20 @@ public class StagePoolManager {
 
     public static Random rng;
 
-    public static void onStartGame() {
-    }
-
     public static void loadCardPool(SaveFile saveFile) {
         cardPool.clear();
-        AbstractDungeon.player.getCardPool(cardPool);
+        if (saveFile == null || StagePoolPatch.cache_stage_pool_cards == null) {
+            AbstractDungeon.player.getCardPool(cardPool);
+            cardPool.sort((card, card2) -> {
+                int c1 = card.rarity.compareTo(card2.rarity);
+                if (c1 != 0) return c1;
+                int c2 = card.cost - card2.cost;
+                if (c2 != 0) return c2;
+                return card.cardID.compareTo(card2.cardID);
+            });
+        } else {
+            cardPool.addAll(StagePoolPatch.cache_stage_pool_cards);
+        }
         for (AbstractCard card : cardPool) {
             TokenCardField.isToken.set(card, false);
         }
