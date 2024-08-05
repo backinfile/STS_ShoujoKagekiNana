@@ -31,6 +31,10 @@ public class StageDiscoveryAction extends AbstractGameAction {
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
             ArrayList<AbstractCard> generatedCards = StagePoolManager.popCard(3);
+            if (generatedCards.isEmpty()) {
+                isDone = true;
+                return;
+            }
             AbstractDungeon.cardRewardScreen.customCombatOpen(generatedCards, CardRewardScreen.TEXT[1], true);
             this.tickDuration();
         } else {

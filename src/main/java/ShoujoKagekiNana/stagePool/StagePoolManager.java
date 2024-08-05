@@ -46,23 +46,23 @@ public class StagePoolManager {
         AbstractDungeon.commonCardPool.clear();
         AbstractDungeon.uncommonCardPool.clear();
         AbstractDungeon.rareCardPool.clear();
-        AbstractDungeon.srcCommonCardPool.clear();
-        AbstractDungeon.srcUncommonCardPool.clear();
-        AbstractDungeon.srcRareCardPool.clear();
+//        AbstractDungeon.srcCommonCardPool.clear();
+//        AbstractDungeon.srcUncommonCardPool.clear();
+//        AbstractDungeon.srcRareCardPool.clear();
 
         for (AbstractCard card : cardPool) {
             switch (card.rarity) {
                 case COMMON:
                     AbstractDungeon.commonCardPool.addToTop(card);
-                    AbstractDungeon.srcCommonCardPool.addToBottom(card);
+//                    AbstractDungeon.srcCommonCardPool.addToBottom(card);
                     break;
                 case UNCOMMON:
                     AbstractDungeon.uncommonCardPool.addToTop(card);
-                    AbstractDungeon.srcUncommonCardPool.addToBottom(card);
+//                    AbstractDungeon.srcUncommonCardPool.addToBottom(card);
                     break;
                 case RARE:
                     AbstractDungeon.rareCardPool.addToTop(card);
-                    AbstractDungeon.srcRareCardPool.addToBottom(card);
+//                    AbstractDungeon.srcRareCardPool.addToBottom(card);
                     break;
             }
         }
@@ -80,13 +80,36 @@ public class StagePoolManager {
         stage_remove_count++;
     }
 
+    public static ArrayList<AbstractCard> popCardForRemove(int number) {
+        ArrayList<AbstractCard> cardPoolCopy = new ArrayList<>(cardPool);
+        ArrayList<AbstractCard> result = new ArrayList<>();
+        while (result.size() < number) {
+            if (!isContainerHasAnyMoreCard(cardPoolCopy, result)) {
+                refreshCardQueue();
+                if (!isContainerHasAnyMoreCard(cardPoolCopy, result)) {
+                    break;
+                }
+            }
+            AbstractCard card = cardPoolCopy.get(AbstractDungeon.cardRng.random(cardPoolCopy.size() - 1));
+            cardPoolCopy.remove(card);
+            if (result.stream().noneMatch(c -> c.cardID.equals(card.cardID))) {
+                result.add(card);
+            }
+        }
+        ArrayList<AbstractCard> copy = new ArrayList<>();
+        for (AbstractCard card : result) {
+            copy.add(card.makeStatEquivalentCopy());
+        }
+        return copy;
+    }
+
     public static ArrayList<AbstractCard> popCard(int number) {
         ArrayList<AbstractCard> result = new ArrayList<>();
         while (result.size() < number) {
             if (!isContainerHasAnyMoreCard(cardQueueInBattle, result)) {
                 refreshCardQueue();
                 if (!isContainerHasAnyMoreCard(cardQueueInBattle, result)) {
-                    break; // TODO add curse
+                    break;
                 }
             }
             AbstractCard card = cardQueueInBattle.pop();
