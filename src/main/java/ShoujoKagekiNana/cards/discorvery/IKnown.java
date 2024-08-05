@@ -1,12 +1,11 @@
-package ShoujoKagekiNana.cards;
+package ShoujoKagekiNana.cards.discorvery;
 
 import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.actions.StageDiscoveryAction;
+import ShoujoKagekiNana.cards.BaseCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class IKnown extends BaseCard {
     public static final String ID = ModPath.makeID(IKnown.class.getSimpleName());

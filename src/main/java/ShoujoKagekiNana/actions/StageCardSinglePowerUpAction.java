@@ -1,5 +1,7 @@
 package ShoujoKagekiNana.actions;
 
+import ShoujoKagekiCore.util.Utils2;
+import ShoujoKagekiNana.cards.Defend03;
 import ShoujoKagekiNana.stagePool.StagePoolManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -27,6 +29,18 @@ public class StageCardSinglePowerUpAction extends AbstractGameAction {
             AbstractCard card = list.get(AbstractDungeon.cardRng.random(list.size() - 1));
             consumer.accept(card);
         }
+
+        for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
+            if (card instanceof Defend03) {
+                consumer.accept(card);
+            }
+        }
+        for (AbstractCard card : Utils2.getAllCardsInCombat(AbstractDungeon.player)) {
+            if (card instanceof Defend03) {
+                consumer.accept(card);
+            }
+        }
+
         isDone = true;
     }
 }

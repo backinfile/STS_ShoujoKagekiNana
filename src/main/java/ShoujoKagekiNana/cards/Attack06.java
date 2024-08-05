@@ -25,7 +25,7 @@ public class Attack06 extends BaseCard {
 
     public Attack06() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = 6;
+        baseDamage = 8;
         DisposableVariable.setBaseValue(this, 6);
     }
 
@@ -50,7 +50,7 @@ public class Attack06 extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(3);
+            upgradeDamage(4);
             initializeDescription();
         }
     }

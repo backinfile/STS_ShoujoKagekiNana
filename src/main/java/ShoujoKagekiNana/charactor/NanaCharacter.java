@@ -5,10 +5,7 @@ import ShoujoKagekiNana.Log;
 import ShoujoKagekiNana.Res;
 import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.auditionEnergy.DoubleEnergyOrb;
-import ShoujoKagekiNana.cards.starter.Defend;
-import ShoujoKagekiNana.cards.starter.OutOfStory;
-import ShoujoKagekiNana.cards.starter.ShineStrike;
-import ShoujoKagekiNana.cards.starter.Strike;
+import ShoujoKagekiNana.cards.starter.*;
 import ShoujoKagekiNana.relics.ShineRelic;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -163,7 +160,7 @@ public class NanaCharacter extends BasePlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
-        retVal.add(OutOfStory.ID);
+        retVal.add(Attack07.ID);
         return retVal;
     }
 

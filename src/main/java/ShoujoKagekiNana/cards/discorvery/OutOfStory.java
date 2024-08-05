@@ -1,19 +1,16 @@
-package ShoujoKagekiNana.cards.starter;
+package ShoujoKagekiNana.cards.discorvery;
 
 import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.actions.StageDiscoveryAction;
-import ShoujoKagekiNana.actions.StageDiscoveryRemoveAction;
 import ShoujoKagekiNana.cards.BaseCard;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class OutOfStory extends BaseCard {
     public static final String ID = ModPath.makeID(OutOfStory.class.getSimpleName());
 
     public OutOfStory() {
-        super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         exhaust = true;
     }
 

@@ -1,10 +1,9 @@
-package ShoujoKagekiNana.cards;
+package ShoujoKagekiNana.cards.discorvery;
 
 import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.actions.StageDiscoveryAction;
 import ShoujoKagekiNana.actions.StageRemoveAction;
-import ShoujoKagekiNana.powers.StageRemovePower;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import ShoujoKagekiNana.cards.BaseCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 

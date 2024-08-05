@@ -18,7 +18,7 @@ public class StageClose extends BaseCard {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         baseBlock = block = 9;
         exhaust = true;
-        DisposableVariable.setBaseValue(this, 6);
+//        DisposableVariable.setBaseValue(this, 6);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

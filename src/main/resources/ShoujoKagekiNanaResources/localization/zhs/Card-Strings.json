@@ -15,6 +15,18 @@
 		"NAME": "我会替你全部承担",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 斩杀 时， 升级 你牌池中的一张随机牌。"
 	},
+	"ShoujoKagekiNana:Attack02": {
+		"NAME": "朝向你的所在",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 易伤 。"
+	},
+	"ShoujoKagekiNana:Attack07": {
+		"NAME": "我们的伙伴",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 易伤 。"
+	},
+	"ShoujoKagekiNana:Past": {
+		"NAME": "曾经的闪耀",
+		"DESCRIPTION": "造成 !D! 点伤害两次 。"
+	},
 	"ShoujoKagekiNana:Defend": {
 		"NAME": "防御",
 		"DESCRIPTION": "获得 !B! 点 格挡 。"
@@ -26,6 +38,11 @@
 	"ShoujoKagekiNana:RevuePassion": {
 		"NAME": "渴望的Revue",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 发起 Revue 。",
+		"FLAVOR": "歌唱，跳舞，互相争夺吧。"
+	},
+	"ShoujoKagekiNana:Defend03": {
+		"NAME": "无动于衷",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 点 格挡。 NL 当你强化牌池时，同时强化此牌。",
 		"FLAVOR": "歌唱，跳舞，互相争夺吧。"
 	},
 	"ShoujoKagekiNana:DesireRevue": {
