@@ -23,6 +23,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -86,6 +87,7 @@ public class StagePoolPatch {
                     cardSave.modifiers = cardModifiersToString(card);
                     cards.add(cardSave);
                 }
+                Log.logger.info("onSave stage_pool_cards = {}", cards.size());
                 return cards;
             }
 
@@ -102,6 +104,7 @@ public class StagePoolPatch {
                     loadCardModifiers(card, cardSave.modifiers);
                     cache_stage_pool_cards.add(card);
                 }
+                Log.logger.info("onLoad stage_pool_cards = {}", cache_stage_pool_cards.size());
             }
         });
 
@@ -160,8 +163,10 @@ public class StagePoolPatch {
             paramtypez = {String.class, String.class, AbstractPlayer.class, ArrayList.class}
     )
     public static class _LoadPatch {
-        public static void Postfix() {
-            StagePoolManager.loadCardPool(null);
+        public static void Postfix(AbstractDungeon __instance) {
+            if (__instance instanceof Exordium) {
+                StagePoolManager.loadCardPool(null);
+            }
         }
     }
 

@@ -27,8 +27,8 @@ public class WildScreenBaroque extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         addToBot(new StageCardPowerUpAction(c -> CardModifierManager.addModifier(c, new AddDamageModifier())));
+        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 
     @Override

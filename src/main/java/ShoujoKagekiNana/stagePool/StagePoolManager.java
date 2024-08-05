@@ -24,7 +24,8 @@ public class StagePoolManager {
 
     public static void loadCardPool(SaveFile saveFile) {
         cardPool.clear();
-        if (saveFile == null || StagePoolPatch.cache_stage_pool_cards == null) {
+        if (StagePoolPatch.cache_stage_pool_cards == null) {
+            Log.logger.info("loadCardPool cache_stage_pool_cards == null");
             AbstractDungeon.player.getCardPool(cardPool);
             cardPool.sort((card, card2) -> {
                 int c1 = card.rarity.compareTo(card2.rarity);
@@ -34,8 +35,19 @@ public class StagePoolManager {
                 return card.cardID.compareTo(card2.cardID);
             });
         } else {
+            Log.logger.info("loadCardPool cache_stage_pool_cards != null");
             cardPool.addAll(StagePoolPatch.cache_stage_pool_cards);
+            StagePoolPatch.cache_stage_pool_cards = null;
         }
+
+        // make copy
+        ArrayList<AbstractCard> tmp = new ArrayList<>(cardPool);
+        cardPool.clear();
+        for (AbstractCard card : tmp) {
+            cardPool.add(card.makeStatEquivalentCopy());
+        }
+
+        // set token
         for (AbstractCard card : cardPool) {
             TokenCardField.isToken.set(card, false);
         }
