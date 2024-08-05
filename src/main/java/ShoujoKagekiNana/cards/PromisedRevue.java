@@ -1,39 +1,38 @@
 package ShoujoKagekiNana.cards;
 
 import ShoujoKagekiCore.shine.DisposableVariable;
-import ShoujoKagekiNana.actions.DamageCallbackAction;
-import ShoujoKagekiNana.actions.StageCardSinglePowerUpAction;
+import ShoujoKagekiNana.actions.InstantAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.MinionPower;
-import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
 import static ShoujoKagekiNana.ModPath.makeID;
 
+public class PromisedRevue extends BaseCard {
+    public static final String ID = makeID(PromisedRevue.class.getSimpleName());
 
-public class Defend03 extends BaseCard {
-    public static final String ID = makeID(Defend03.class.getSimpleName());
-
-    public Defend03() {
-        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        baseDamage = 5;
-        baseBlock = 5;
-//        DisposableVariable.setBaseValue(this, 6);
+    public PromisedRevue() {
+        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        this.baseDamage = this.damage = 10;
+        baseMagicNumber = magicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new InstantAction(() -> {
+            if (m != null && (m.intent == AbstractMonster.Intent.ATTACK || m.intent == AbstractMonster.Intent.ATTACK_BUFF || m.intent == AbstractMonster.Intent.ATTACK_DEBUFF || m.intent == AbstractMonster.Intent.ATTACK_DEFEND)) {
+                addToBot(new DrawCardAction(magicNumber));
+            }
+        }));
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBot(new GainBlockAction(p, block));
     }
 
     @Override
@@ -41,7 +40,7 @@ public class Defend03 extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(2);
-            upgradeBlock(2);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

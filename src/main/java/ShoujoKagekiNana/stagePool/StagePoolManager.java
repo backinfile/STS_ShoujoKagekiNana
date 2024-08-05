@@ -32,6 +32,7 @@ public class StagePoolManager {
             TokenCardField.isToken.set(card, false);
         }
         Log.logger.info("load card pool count = {}", cardPool.size());
+        initializeCardPools();
     }
 
     public static void initializeCardPools() {

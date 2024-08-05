@@ -31,6 +31,11 @@ public class AddDamageModifier extends AbstractCardModifier {
     }
 
     @Override
+    public boolean shouldApply(AbstractCard card) {
+        return card.type == AbstractCard.CardType.ATTACK || card.baseDamage > 0;
+    }
+
+    @Override
     public float modifyDamage(float damage, DamageInfo.DamageType type, AbstractCard card, AbstractMonster target) {
         CardModifierManager.modifiers(card);
         return damage + 1;

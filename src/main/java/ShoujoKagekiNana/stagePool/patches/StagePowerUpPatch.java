@@ -62,12 +62,11 @@ public class StagePowerUpPatch {
         public static void Postfix(AbstractCard __instance, SpriteBatch sb, float ___drawScale, float ___angle, float ___transparency) {
             ArrayList<AbstractCardModifier> modifiers = CardModifierManager.modifiers(__instance);
             long addDamage = modifiers.stream().filter(m -> m instanceof AddDamageModifier).count();
-            long addBlock = modifiers.stream().filter(m -> m instanceof AddBlockModifier).count();
 
-            if (addDamage == 0 && addBlock == 0) {
+            if (addDamage == 0) {
                 return;
             }
-            String text = addDamage + "/" + addBlock;
+            String text = "" + addDamage;
 
             float img_scale = 1.2f;
             float text_scale = 0.8f;

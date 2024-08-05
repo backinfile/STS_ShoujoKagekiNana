@@ -4,6 +4,7 @@ import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.actions.StageCardPowerUpAction;
 import ShoujoKagekiNana.actions.StageDiscoveryAction;
 import ShoujoKagekiNana.modifiers.AddBlockModifier;
+import ShoujoKagekiNana.modifiers.AddDamageModifier;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -21,7 +22,7 @@ public class Done extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p, block));
         this.addToBot(new StageCardPowerUpAction(c -> {
-            CardModifierManager.addModifier(c, new AddBlockModifier());
+            CardModifierManager.addModifier(c, new AddDamageModifier());
         }));
     }
 

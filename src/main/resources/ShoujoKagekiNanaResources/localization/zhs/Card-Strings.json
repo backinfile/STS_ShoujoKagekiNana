@@ -35,25 +35,30 @@
 		"NAME": "后空翻",
 		"DESCRIPTION": "获得 !B! 点 瞬间 格挡。"
 	},
-	"ShoujoKagekiNana:RevuePassion": {
-		"NAME": "渴望的Revue",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 发起 Revue 。",
-		"FLAVOR": "歌唱，跳舞，互相争夺吧。"
-	},
 	"ShoujoKagekiNana:Defend03": {
-		"NAME": "无动于衷",
+		"NAME": "若是无动于衷",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 点 格挡。 NL 当你强化牌池时，同时强化此牌。",
-		"FLAVOR": "歌唱，跳舞，互相争夺吧。"
 	},
 	"ShoujoKagekiNana:DesireRevue": {
 		"NAME": "渴望的Revue",
-		"DESCRIPTION": "获得 !M! 点力量。 NL 发起 Revue 。",
+		"DESCRIPTION": "保留 。 NL 获得 !M! 点力量。 NL 获得 [E] 。",
+		"UPGRADE_DESCRIPTION": "保留 。 NL 获得 !M! 点力量。 NL 获得 [E] [E] 。",
 		"FLAVOR": "歌唱，跳舞，互相争夺吧。"
+	},
+	"ShoujoKagekiNana:JealousRevue": {
+		"NAME": "嫉妒的Revue",
+		"DESCRIPTION": "抽 !M! 张牌，丢弃其中的非 闪耀 牌。",
+		"FLAVOR": "夜尽天明，迎来真昼。"
+	},
+	"ShoujoKagekiNana:PromisedRevue": {
+		"NAME": "约定的Revue",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 如果目标敌人的意图是攻击，则抽 !M! 张牌。",
+		"FLAVOR": "在碰撞、争执、交错中不断连接的羁绊，却也是被拆散的两人无法再次相见的悲剧。"
 	},
 	"ShoujoKagekiNana:ProudRevue": {
 		"NAME": "骄傲的Revue",
 		"DESCRIPTION": "抽 !M! 张攻击牌。 NL 发起 Revue 。",
-		"FLAVOR": "选拔的合格者能获得成为Top Star的资格，不合格者将会失去舞台少女的 #y闪耀 。"
+		"FLAVOR": "选拔的合格者能获得成为Top Star的资格，不合格者将会失去舞台少女的闪耀。"
 	},
 	"ShoujoKagekiNana:IKnown": {
 		"NAME": "我全都知道哦",
@@ -73,7 +78,7 @@
 	},
 	"ShoujoKagekiNana:Done": {
 		"NAME": "烹饪完成",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 牌池中的卡牌 格挡 +1。 NL 消耗 。",
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 牌池中的卡牌伤害+1。 NL 消耗 。",
 		"FLAVOR": ""
 	},
 	"ShoujoKagekiNana:Exist": {

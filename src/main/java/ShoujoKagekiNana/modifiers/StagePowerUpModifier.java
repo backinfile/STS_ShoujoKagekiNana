@@ -30,9 +30,8 @@ public class StagePowerUpModifier extends AbstractCardModifier {
     public List<TooltipInfo> additionalTooltips(AbstractCard card) {
         AbstractList<AbstractCardModifier> modifiers = CardModifierManager.modifiers(card);
         long addDamage = modifiers.stream().filter(m -> m instanceof AddDamageModifier).count();
-        long addBlock = modifiers.stream().filter(m -> m instanceof AddBlockModifier).count();
         List<TooltipInfo> result = new ArrayList<>();
-        result.add(new TooltipInfo(uiStrings.TEXT[0], uiStrings.TEXT[1] + addDamage + uiStrings.TEXT[2] + addBlock + uiStrings.TEXT[3]));
+        result.add(new TooltipInfo(uiStrings.TEXT[0], uiStrings.TEXT[1] + addDamage + uiStrings.TEXT[2]));
         return result;
     }
 

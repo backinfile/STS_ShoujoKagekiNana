@@ -1,9 +1,9 @@
-package ShoujoKagekiNana.cards.tmp;
+package ShoujoKagekiNana.cards;
 
+import ShoujoKagekiCore.shine.DisposableVariable;
 import ShoujoKagekiNana.actions.StartRevueAction;
-import ShoujoKagekiNana.cards.BaseCard;
-import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -11,26 +11,29 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 
 import static ShoujoKagekiNana.ModPath.makeID;
 
-@AutoAdd.Ignore
 public class DesireRevue extends BaseCard {
     public static final String ID = makeID(DesireRevue.class.getSimpleName());
 
     public DesireRevue() {
-        super(ID, 1, CardType.SKILL, AbstractCard.CardRarity.BASIC, AbstractCard.CardTarget.ENEMY);
+        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         baseMagicNumber = magicNumber = 1;
+        DisposableVariable.setBaseValue(this, 9);
+        selfRetain = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
-        addToBot(new StartRevueAction(m));
+        addToBot(new GainEnergyAction(magicNumber));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeMagicNumber(1);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

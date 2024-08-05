@@ -60,15 +60,15 @@ public class CardPoolPatch {
     }
 
 
-    @SpirePatch2(
-            clz = AbstractDungeon.class,
-            method = "initializeCardPools"
-    )
-    public static class _InitPatch {
-        public static void Postfix() {
-            StagePoolManager.initializeCardPools();
-        }
-    }
+//    @SpirePatch2(
+//            clz = AbstractDungeon.class,
+//            method = "initializeCardPools"
+//    )
+//    public static class _InitPatch {
+//        public static void Postfix() {
+//            StagePoolManager.initializeCardPools();
+//        }
+//    }
 
     @SpirePatch2(
             clz = AbstractDungeon.class,

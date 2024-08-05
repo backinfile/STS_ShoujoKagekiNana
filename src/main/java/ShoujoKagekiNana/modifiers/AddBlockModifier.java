@@ -24,6 +24,11 @@ public class AddBlockModifier extends AbstractCardModifier {
     }
 
     @Override
+    public boolean shouldApply(AbstractCard card) {
+        return card.baseBlock > 0;
+    }
+
+    @Override
     public float modifyBlock(float block, AbstractCard card) {
         return block + 1;
     }
