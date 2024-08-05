@@ -19,6 +19,8 @@ public class StageClose extends BaseCard {
         baseBlock = block = 9;
         exhaust = true;
 //        DisposableVariable.setBaseValue(this, 6);
+
+        this.tags.add(CardTags.HEALING);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

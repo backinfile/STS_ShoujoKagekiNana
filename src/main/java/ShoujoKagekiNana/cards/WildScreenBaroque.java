@@ -22,6 +22,7 @@ public class WildScreenBaroque extends BaseCard {
         baseDamage = 15;
         DisposableVariable.setBaseValue(this, 9);
         exhaust = true;
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override

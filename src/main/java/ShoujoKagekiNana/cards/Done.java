@@ -17,6 +17,7 @@ public class Done extends BaseCard {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseBlock = this.block = 12;
         exhaust = true;
+        this.tags.add(CardTags.HEALING);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

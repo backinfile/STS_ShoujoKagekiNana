@@ -41,8 +41,8 @@
 	},
 	"ShoujoKagekiNana:DesireRevue": {
 		"NAME": "渴望的Revue",
-		"DESCRIPTION": "保留 。 NL 获得 !M! 点力量。 NL 获得 [E] 。",
-		"UPGRADE_DESCRIPTION": "保留 。 NL 获得 !M! 点力量。 NL 获得 [E] [E] 。",
+		"DESCRIPTION": "获得 !M! 点力量。 NL 获得 [E] 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "获得 !M! 点力量。 NL 获得 [E] [E] 。 NL 消耗 。",
 		"FLAVOR": "如果只有那颗星星知晓未来。"
 	},
 	"ShoujoKagekiNana:JealousRevue": {
@@ -57,7 +57,7 @@
 	},
 	"ShoujoKagekiNana:ProudRevue": {
 		"NAME": "骄傲的Revue",
-		"DESCRIPTION": "抽 !M! 张攻击牌。 NL 发起 Revue 。",
+		"DESCRIPTION": "目标敌人立即行动 。 NL 获得 [E] [E] 。 NL 抽 !M! 张牌。",
 		"FLAVOR": "选拔的合格者能获得成为Top Star的资格，不合格者将会失去舞台少女的闪耀。"
 	},
 	"ShoujoKagekiNana:IKnown": {

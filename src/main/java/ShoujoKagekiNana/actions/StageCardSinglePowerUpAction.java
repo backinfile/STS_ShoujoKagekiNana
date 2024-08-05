@@ -22,6 +22,10 @@ public class StageCardSinglePowerUpAction extends AbstractGameAction {
         this.consumer = consumer;
     }
 
+    public void doInstance() {
+        update();
+    }
+
     @Override
     public void update() {
         List<AbstractCard> list = StagePoolManager.cardPool.stream().filter(predicate).collect(Collectors.toList());

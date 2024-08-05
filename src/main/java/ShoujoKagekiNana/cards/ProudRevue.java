@@ -1,6 +1,7 @@
 package ShoujoKagekiNana.cards;
 
 import ShoujoKagekiCore.shine.DisposableVariable;
+import ShoujoKagekiNana.actions.DoIntentAction;
 import ShoujoKagekiNana.actions.DrawAttackCardAction;
 import ShoujoKagekiNana.actions.StartRevueAction;
 import basemod.AutoAdd;
@@ -16,13 +17,13 @@ public class ProudRevue extends BaseCard {
     public static final String ID = makeID(ProudRevue.class.getSimpleName());
 
     public ProudRevue() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 2;
-        DisposableVariable.setBaseValue(this, 1);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        addToBot(new DoIntentAction(m));
         addToBot(new GainEnergyAction(magicNumber));
         addToBot(new DrawCardAction(magicNumber));
     }
@@ -31,8 +32,7 @@ public class ProudRevue extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

@@ -27,6 +27,7 @@ public class Attack06 extends BaseCard {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = 8;
         DisposableVariable.setBaseValue(this, 6);
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override
@@ -36,12 +37,17 @@ public class Attack06 extends BaseCard {
         AbstractMonster target = m;
         addToBot(new DamageCallbackAction(target, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL, hp -> {
             if ((target.isDying || target.currentHealth <= 0) && !target.halfDead && !target.hasPower(MinionPower.POWER_ID)) {
-                addToTop(new StageCardSinglePowerUpAction(AbstractCard::canUpgrade, c -> {
+                StageCardSinglePowerUpAction action = new StageCardSinglePowerUpAction(AbstractCard::canUpgrade, c -> {
                     c.upgrade();
                     AbstractDungeon.effectsQueue.add(new UpgradeShineEffect((float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
                     AbstractDungeon.topLevelEffectsQueue.add(new ShowCardBrieflyEffect(c.makeStatEquivalentCopy()));
                     addToTop(new WaitAction(Settings.ACTION_DUR_MED));
-                }));
+                });
+                if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
+                    action.doInstance();
+                } else {
+                    addToTop(action);
+                }
             }
         }));
     }

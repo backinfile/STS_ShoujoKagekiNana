@@ -17,8 +17,8 @@ public class DesireRevue extends BaseCard {
     public DesireRevue() {
         super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         baseMagicNumber = magicNumber = 1;
+        exhaust = true;
         DisposableVariable.setBaseValue(this, 9);
-        selfRetain = true;
     }
 
     @Override

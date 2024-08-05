@@ -41,12 +41,7 @@ public class StagePoolPatch {
     public static ArrayList<AbstractCard> cache_stage_pool_cards;
 
     public static void initialize() {
-        BaseMod.subscribe(new OnStartBattleSubscriber() {
-            @Override
-            public void receiveOnBattleStart(AbstractRoom abstractRoom) {
-                StagePoolManager.onBattleStart();
-            }
-        });
+        BaseMod.subscribe((OnStartBattleSubscriber) abstractRoom -> StagePoolManager.onBattleStart());
 
         BaseMod.addSaveField(ModPath.makeID("stage_pool_seed_count"), new CustomSavable<Integer>() {
             @Override
