@@ -32,7 +32,7 @@
     "TEXT_DICT": {}
   },
   "ShoujoKagekiNana:StagePowerUpModifier": {
-    "TEXT": ["舞台增益", "伤害增加 #y", " NL 格挡 增加 #y", " 。"],
+    "TEXT": ["舞台增益", "伤害增加 #y", " 。 NL 格挡 增加 #y", " 。"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   }

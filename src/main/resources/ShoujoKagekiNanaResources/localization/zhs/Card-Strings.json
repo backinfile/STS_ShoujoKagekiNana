@@ -54,6 +54,11 @@
 		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 从3张随机牌中选择1张使其 无法触及 。 NL 消耗 。",
 		"FLAVOR": ""
 	},
+	"ShoujoKagekiNana:Done": {
+		"NAME": "烹饪完成",
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 牌池中的卡牌 格挡 +1。 NL 消耗 。",
+		"FLAVOR": ""
+	},
 	"ShoujoKagekiNana:Exist": {
 		"NAME": "很耀眼吗？",
 		"DESCRIPTION": "发现 1张牌，获得与其耗能相等的 [E] 。 NL 消耗 。",
