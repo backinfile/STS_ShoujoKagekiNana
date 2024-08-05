@@ -97,6 +97,11 @@
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 牌池中的卡牌伤害+1。 NL 消耗 。",
 		"FLAVOR": "皆杀的Revue——开幕！歌唱！起舞！互相争夺吧！"
 	},
+	"ShoujoKagekiNana:EmptyStage": {
+		"NAME": "舞台空了",
+		"DESCRIPTION": "不能被打出 。 ",
+		"FLAVOR": "我只想用全力去保护。"
+	},
 	"D_ShoujoKageki:Promise": {
 		"NAME": "约定",
 		"DESCRIPTION": "不能被打出 。 NL 回合开始时如果在 约定牌堆 中，获得 [E]",

@@ -1,10 +1,13 @@
 package ShoujoKagekiNana.actions;
 
+import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.stagePool.StagePoolManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
 
 import java.util.ArrayList;
@@ -25,7 +28,7 @@ public class StageDiscoveryRemoveAction extends AbstractGameAction {
                 isDone = true;
                 return;
             }
-            AbstractDungeon.cardRewardScreen.customCombatOpen(generatedCards, CardRewardScreen.TEXT[1], true);
+            AbstractDungeon.cardRewardScreen.customCombatOpen(generatedCards, StageDiscoveryAction.uiString.TEXT[1], true);
             this.tickDuration();
         } else {
             if (!this.retrieveCard) {

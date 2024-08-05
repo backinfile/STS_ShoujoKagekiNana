@@ -1,11 +1,14 @@
 package ShoujoKagekiNana.actions;
 
+import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.stagePool.StagePoolManager;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
@@ -14,6 +17,7 @@ import java.util.ArrayList;
 import java.util.function.Consumer;
 
 public class StageDiscoveryAction extends AbstractGameAction {
+    public static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(ModPath.makeID(StageDiscoveryAction.class.getSimpleName()));
     private boolean retrieveCard = false;
     private final Consumer<AbstractCard> consumer;
 
@@ -35,7 +39,7 @@ public class StageDiscoveryAction extends AbstractGameAction {
                 isDone = true;
                 return;
             }
-            AbstractDungeon.cardRewardScreen.customCombatOpen(generatedCards, CardRewardScreen.TEXT[1], true);
+            AbstractDungeon.cardRewardScreen.customCombatOpen(generatedCards, uiString.TEXT[0], true);
             this.tickDuration();
         } else {
             if (!this.retrieveCard) {

@@ -3,6 +3,7 @@ package ShoujoKagekiNana.stagePool.patches;
 import ShoujoKagekiCore.base.BasePlayer;
 import ShoujoKagekiNana.Log;
 import ShoujoKagekiNana.auditionEnergy.patches.AuditionEnergyPatch;
+import ShoujoKagekiNana.cards.EmptyStage;
 import ShoujoKagekiNana.cards.starter.Strike;
 import ShoujoKagekiNana.charactor.NanaCharacter;
 import basemod.ReflectionHacks;
@@ -65,7 +66,7 @@ public class StagePoolDropRewardCardPatch {
                 return null;
         }
         if (pool.isEmpty()) {
-            return new Strike();
+            return new EmptyStage();
         }
         return pool.get(AbstractDungeon.cardRng.random(pool.size() - 1));
     }

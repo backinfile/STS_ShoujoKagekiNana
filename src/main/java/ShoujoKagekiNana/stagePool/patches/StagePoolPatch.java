@@ -8,10 +8,9 @@ import basemod.abstracts.AbstractCardModifier;
 import basemod.abstracts.CustomSavable;
 import basemod.helpers.CardModifierManager;
 import basemod.interfaces.OnStartBattleSubscriber;
+import basemod.interfaces.PreStartGameSubscriber;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.CardModifierPatches;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
@@ -20,12 +19,15 @@ import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardSave;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
+import javassist.CtBehavior;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +58,7 @@ public class StagePoolPatch {
             public void onLoad(Integer integer) {
                 if (integer == null) integer = 0;
                 StagePoolManager.rng = new Random(Settings.seed, integer);
+                Log.logger.info("init rng with load");
             }
         });
 
@@ -102,6 +105,13 @@ public class StagePoolPatch {
             }
         });
 
+        BaseMod.subscribe((PreStartGameSubscriber) () -> {
+            StagePoolManager.rng = null;
+            StagePoolManager.stage_remove_count = 0;
+            cache_stage_pool_cards = null;
+            Log.logger.info("clear data on new game start");
+        });
+
 
     }
 
@@ -122,6 +132,25 @@ public class StagePoolPatch {
 //    public static class _InitPatch {
 //        public static void Postfix() {
 //            StagePoolManager.initializeCardPools();
+//        }
+//    }
+//
+//
+//    // clear data on new game start
+//    @SpirePatch2(
+//            clz = CardCrawlGame.class,
+//            method = "update"
+//    )
+//    public static class _InitPatch {
+//        @SpireInsertPatch(locator = Locator.class)
+//        public static void Insert() {
+//        }
+//
+//        public static class Locator extends SpireInsertLocator {
+//            public int[] Locate(CtBehavior ctBehavior) throws Exception {
+//                Matcher m = new Matcher.FieldAccessMatcher(CardCrawlGame.class, "loadingSave");
+//                return LineFinder.findInOrder(ctBehavior, m);
+//            }
 //        }
 //    }
 
@@ -147,15 +176,16 @@ public class StagePoolPatch {
         }
     }
 
-    @SpirePatch2(
-            clz = AbstractDungeon.class,
-            method = "generateSeeds"
-    )
-    public static class _SeedPatch1 {
-        public static void Postfix() {
-            StagePoolManager.rng = new Random(Settings.seed);
-        }
-    }
+//    @SpirePatch2(
+//            clz = AbstractDungeon.class,
+//            method = "generateSeeds"
+//    )
+//    public static class _SeedPatch1 {
+//        public static void Prefix() {
+//            StagePoolManager.rng = new Random(Settings.seed);
+//            Log.logger.info("init rng with generateSeeds");
+//        }
+//    }
 
 //    @SpirePatch2(
 //            clz = AbstractDungeon.class,
@@ -194,7 +224,7 @@ public class StagePoolPatch {
                 var12.printStackTrace();
             }
         }
-        Log.logger.info("cardModifiersToString = {}", result);
+//        Log.logger.info("cardModifiersToString = {}", result);
         return result;
     }
 

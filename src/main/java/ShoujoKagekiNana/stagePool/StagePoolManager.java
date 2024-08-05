@@ -6,6 +6,7 @@ import ShoujoKagekiNana.stagePool.patches.StagePoolPatch;
 import ShoujoKagekiNana.util.Util;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
@@ -39,6 +40,12 @@ public class StagePoolManager {
             TokenCardField.isToken.set(card, false);
         }
         Log.logger.info("load card pool count = {}", cardPool.size());
+
+        if (rng == null) {
+            StagePoolManager.rng = new Random(Settings.seed);
+            Log.logger.info("init rng with loadCardPool");
+        }
+
         initializeCardPools();
     }
 

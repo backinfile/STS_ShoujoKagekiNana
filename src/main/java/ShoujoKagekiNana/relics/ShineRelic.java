@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -24,6 +25,7 @@ public class ShineRelic extends BaseRelic {
         super.atBattleStart();
         flash();
         addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        addToBot(new WaitAction(Settings.ACTION_DUR_FAST));
         addToBot(new StageDiscoveryAction());
     }
 
