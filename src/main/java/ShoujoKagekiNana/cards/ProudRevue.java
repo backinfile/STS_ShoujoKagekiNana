@@ -17,7 +17,7 @@ public class ProudRevue extends BaseCard {
     public static final String ID = makeID(ProudRevue.class.getSimpleName());
 
     public ProudRevue() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 2;
     }
 

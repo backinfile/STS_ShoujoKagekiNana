@@ -15,6 +15,10 @@
 		"NAME": "我会替你全部承担",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 斩杀 时， 升级 你牌池中的一张随机牌。"
 	},
+	"ShoujoKagekiNana:Attack04": {
+		"NAME": "劈砍",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 如果此牌为 衍生牌 ， 获得 [E] 。"
+	},
 	"ShoujoKagekiNana:Attack02": {
 		"NAME": "朝向你的所在",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 易伤 。"

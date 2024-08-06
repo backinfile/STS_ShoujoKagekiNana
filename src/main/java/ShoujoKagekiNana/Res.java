@@ -25,7 +25,7 @@ public class Res {
     public static final String THE_DEFAULT_PORTRAIT = ModPath.getResPath("/images/charSelect/DefaultCharacterPortraitBG.png");
     public static final String THE_DEFAULT_SHOULDER_1 = ModPath.getResPath("/images/char/shoulder.png");
     public static final String THE_DEFAULT_SHOULDER_2 = ModPath.getResPath("/images/char/shoulder.png");
-    public static final String THE_DEFAULT_CORPSE = ModPath.getResPath("/images/char/karen/corpse.png");
+    public static final String THE_DEFAULT_CORPSE = ModPath.getResPath("/images/char/corpse.png");
 
     // Colors (RGB)
     // Character Color
