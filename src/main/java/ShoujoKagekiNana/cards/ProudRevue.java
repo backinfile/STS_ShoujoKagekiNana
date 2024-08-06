@@ -17,14 +17,14 @@ public class ProudRevue extends BaseCard {
     public static final String ID = makeID(ProudRevue.class.getSimpleName());
 
     public ProudRevue() {
-        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.ENEMY);
+        super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.ENEMY);
         baseMagicNumber = magicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DoIntentAction(m));
-        addToBot(new GainEnergyAction(magicNumber));
+        addToBot(new GainEnergyAction(2));
         addToBot(new DrawCardAction(magicNumber));
     }
 
@@ -32,7 +32,7 @@ public class ProudRevue extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

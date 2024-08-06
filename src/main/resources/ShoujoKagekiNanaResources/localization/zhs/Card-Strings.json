@@ -98,6 +98,11 @@
 		"DESCRIPTION": "每回合第一次打出 闪耀 牌时，获得 [E] ，抽 1 张牌。",
 		"FLAVOR": ""
 	},
+	"ShoujoKagekiNana:Invite": {
+		"NAME": "长颈鹿的邀请",
+		"DESCRIPTION": "每回合第一次打出 闪耀 牌时，获得 [E] ，抽 1 张牌。",
+		"FLAVOR": ""
+	},
 	"ShoujoKagekiNana:GAOU": {
 		"NAME": "嘎哦",
 		"DESCRIPTION": "失去所有 易伤 和 虚弱 。 NL 给予所有敌人 !M! 层 易伤 和 虚弱 。 NL 消耗 。",
