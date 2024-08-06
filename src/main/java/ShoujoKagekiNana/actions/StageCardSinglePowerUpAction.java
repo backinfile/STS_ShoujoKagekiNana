@@ -22,6 +22,11 @@ public class StageCardSinglePowerUpAction extends AbstractGameAction {
         this.consumer = consumer;
     }
 
+    public StageCardSinglePowerUpAction(AbstractCard card, Consumer<AbstractCard> consumer) {
+        this.predicate = c -> c.cardID.equals(card.cardID);
+        this.consumer = consumer;
+    }
+
     public void doInstance() {
         update();
     }

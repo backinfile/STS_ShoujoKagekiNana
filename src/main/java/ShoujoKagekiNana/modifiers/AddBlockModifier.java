@@ -3,6 +3,7 @@ package ShoujoKagekiNana.modifiers;
 import ShoujoKagekiNana.ModPath;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -36,5 +37,10 @@ public class AddBlockModifier extends AbstractCardModifier {
     @Override
     public AbstractCardModifier makeCopy() {
         return new AddBlockModifier();
+    }
+
+    @Override
+    public void onRender(AbstractCard card, SpriteBatch sb) {
+        super.onRender(card, sb);
     }
 }

@@ -32,8 +32,8 @@
 		"DESCRIPTION": "获得 !B! 点 格挡 。"
 	},
 	"ShoujoKagekiNana:Defend02": {
-		"NAME": "后空翻",
-		"DESCRIPTION": "获得 !B! 点 瞬间 格挡。"
+		"NAME": "腾空",
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌，打出其中1张后，弃置其余。"
 	},
 	"ShoujoKagekiNana:Defend03": {
 		"NAME": "若是无动于衷",
@@ -89,6 +89,16 @@
 	"ShoujoKagekiNana:GAOU": {
 		"NAME": "嘎哦",
 		"DESCRIPTION": "失去所有 易伤 和 虚弱 。 NL 给予所有敌人 !M! 层 易伤 和 虚弱 。 NL 消耗 。",
+		"FLAVOR": ""
+	},
+	"ShoujoKagekiNana:ScatteredStories": {
+		"NAME": "散落的故事",
+		"DESCRIPTION": "发现 1张牌， NL 使其伤害+ !M! 。 NL 消耗 。",
+		"FLAVOR": ""
+	},
+	"ShoujoKagekiNana:Jump": {
+		"NAME": "跳跃斩击",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 如果本回合打出过攻击牌，抽 !M! 张牌。",
 		"FLAVOR": ""
 	},
 	"ShoujoKagekiNana:Build": {
