@@ -81,6 +81,16 @@
 		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 牌池中的卡牌伤害+1。 NL 消耗 。",
 		"FLAVOR": ""
 	},
+	"ShoujoKagekiNana:HotBanana": {
+		"NAME": "Hot Banana",
+		"DESCRIPTION": "每回合第一次打出 闪耀 牌时，获得 [E] ，抽 1 张牌。",
+		"FLAVOR": ""
+	},
+	"ShoujoKagekiNana:Build": {
+		"NAME": "高塔建立之时",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 获取时，牌池中的卡牌伤害+1。",
+		"FLAVOR": "如饥似渴地追求新的舞台，这就是舞台少女。"
+	},
 	"ShoujoKagekiNana:Exist": {
 		"NAME": "很耀眼吗？",
 		"DESCRIPTION": "发现 1张牌，获得与其耗能相等的 [E] 。 NL 消耗 。",

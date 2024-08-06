@@ -5,5 +5,12 @@
 			"战斗结束后，使 #y",
 			" #r无法触及 。"
 		]
+	},
+	"ShoujoKagekiNana:HotBananaPower": {
+		"NAME": "HotBanana",
+		"DESCRIPTIONS": [
+			"每回合第一次打出 #y闪耀 牌时，获得 [E] ，抽 #y1 张牌。",
+			"每回合前 #y"," 次打出 #y闪耀 牌时，获得 [E] ，抽 #y1 张牌。"
+		]
 	}
 }

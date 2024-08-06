@@ -17,6 +17,10 @@ public class StageCardPowerUpAction extends AbstractGameAction {
         this.consumer = consumer;
     }
 
+    public void doInstance() {
+        update();
+    }
+
     @Override
     public void update() {
         for (AbstractCard card : StagePoolManager.cardPool) {
