@@ -26,8 +26,10 @@ public class GAOU extends BaseCard {
         this.addToBot(new RemoveSpecificPowerAction(p, p, VulnerablePower.POWER_ID));
         this.addToBot(new RemoveSpecificPowerAction(p, p, WeakPower.POWER_ID));
         for (AbstractMonster monster : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            this.addToBot(new ApplyPowerAction(monster, p, new VulnerablePower(monster, magicNumber, false)));
-            this.addToBot(new ApplyPowerAction(monster, p, new WeakPower(monster, magicNumber, false)));
+            if (!monster.isDeadOrEscaped()) {
+                this.addToBot(new ApplyPowerAction(monster, p, new VulnerablePower(monster, magicNumber, false)));
+                this.addToBot(new ApplyPowerAction(monster, p, new WeakPower(monster, magicNumber, false)));
+            }
         }
     }
 

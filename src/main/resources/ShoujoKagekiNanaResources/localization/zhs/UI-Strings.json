@@ -41,5 +41,10 @@
     "TEXT": ["舞台增益", "伤害增加 #y", " 。"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
+  },
+  "ShoujoKagekiNana:TransparencyModifier": {
+    "TEXT": ["腾空", "打出具有腾空的牌后，丢弃其他具有腾空的牌。"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
   }
 }
