@@ -23,7 +23,7 @@
     }
   },
   "ShoujoKagekiNana:TopPanelDisposedPileBtn": {
-    "TEXT": ["命运的舞台", "舞台即为当前牌池，影响局内的发现效果和卡牌奖励。", " NL #y无法触及 的牌共有 #y", " 张，不在这里显示。" ],
+    "TEXT": ["命运的舞台", "舞台即为当前牌池，影响战斗内随机获取卡牌的效果以及卡牌奖励。", " NL #y无法触及 的牌共有 #y", " 张，不在这里显示。" ],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },
