@@ -43,7 +43,7 @@
     "TEXT_DICT": {}
   },
   "ShoujoKagekiNana:TransparencyModifier": {
-    "TEXT": ["腾空", "打出具有腾空的牌后，丢弃其他具有腾空的牌。"],
+    "TEXT": ["瞬间", "打出具有瞬间的牌后，丢弃其他具有瞬间的牌。"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   }

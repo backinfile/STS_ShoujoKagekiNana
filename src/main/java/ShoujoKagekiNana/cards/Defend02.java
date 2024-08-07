@@ -5,6 +5,7 @@ import ShoujoKagekiNana.actions.InstantAction;
 import ShoujoKagekiNana.modifiers.TransparencyModifier;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -22,6 +23,7 @@ public class Defend02 extends BaseCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
 //        this.addToBot(new GainCustomBlockAction(this, p, this.block));
+        this.addToBot(new GainBlockAction(p, block));
         addToBot(new DrawCardAction(magicNumber, new InstantAction(() -> {
             for (AbstractCard card : DrawCardAction.drawnCards) {
                 CardModifierManager.addModifier(card, new TransparencyModifier());
