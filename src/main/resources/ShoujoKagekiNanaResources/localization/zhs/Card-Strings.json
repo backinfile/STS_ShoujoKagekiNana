@@ -35,6 +35,10 @@
 		"NAME": "我们的伙伴",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 易伤 。"
 	},
+	"ShoujoKagekiNana:Attack09": {
+		"NAME": "星光化成星屑",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽 !M! 张牌。"
+	},
 	"ShoujoKagekiNana:Past": {
 		"NAME": "曾经的闪耀",
 		"DESCRIPTION": "造成 !D! 点伤害两次 。"
@@ -107,7 +111,8 @@
 	},
 	"ShoujoKagekiNana:Invite": {
 		"NAME": "长颈鹿的邀请",
-		"DESCRIPTION": "回合开始时，抽 !M! 张牌, 打出其中 1 张后，弃置其余。",
+		"DESCRIPTION": "选择1张 衍生牌 加入牌组。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "保留 。 NL 选择1张 衍生牌 加入牌组。 NL 消耗 。",
 		"FLAVOR": ""
 	},
 	"ShoujoKagekiNana:GAOU": {

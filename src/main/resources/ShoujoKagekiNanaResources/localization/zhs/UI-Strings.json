@@ -41,5 +41,10 @@
     "TEXT": ["瞬间", "打出具有瞬间的牌后，丢弃其他具有瞬间的牌。"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
+  },
+  "ShoujoKagekiNana:CopyHandCardToDeckAction": {
+    "TEXT": ["选择卡牌加入牌组"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
   }
 }
