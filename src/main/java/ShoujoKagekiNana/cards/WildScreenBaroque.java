@@ -20,7 +20,7 @@ public class WildScreenBaroque extends BaseCard {
     public WildScreenBaroque() {
         super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         baseDamage = 12;
-        DisposableVariable.setBaseValue(this, 9);
+        DisposableVariable.setBaseValue(this, 6);
         exhaust = true;
         this.tags.add(CardTags.HEALING);
     }

@@ -16,10 +16,10 @@ public class Done extends BaseCard {
 
     public Done() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
-        this.baseBlock = this.block = 6;
+        this.baseBlock = this.block = 8;
         exhaust = true;
         this.tags.add(CardTags.HEALING);
-        DisposableVariable.setBaseValue(this, 6);
+        DisposableVariable.setBaseValue(this, 3);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -32,7 +32,7 @@ public class Done extends BaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeBlock(3);
+            upgradeBlock(4);
             initializeDescription();
         }
     }

@@ -18,7 +18,7 @@ public class StageClose extends BaseCard {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         baseBlock = block = 5;
         exhaust = true;
-        DisposableVariable.setBaseValue(this, 6);
+        DisposableVariable.setBaseValue(this, 3);
         this.tags.add(CardTags.HEALING);
     }
 
