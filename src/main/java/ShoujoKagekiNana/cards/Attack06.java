@@ -26,7 +26,7 @@ public class Attack06 extends BaseCard {
     public Attack06() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = 6;
-        DisposableVariable.setBaseValue(this, 6);
+        DisposableVariable.setBaseValue(this, 3);
         this.tags.add(CardTags.HEALING);
     }
 

@@ -39,6 +39,10 @@
 		"NAME": "星光化成星屑",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 抽 !M! 张牌。"
 	},
+	"ShoujoKagekiNana:Attack08": {
+		"NAME": "在绝望到来之前",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 每有1张 无法触及 的牌，伤害+ !M! 。"
+	},
 	"ShoujoKagekiNana:Past": {
 		"NAME": "曾经的闪耀",
 		"DESCRIPTION": "造成 !D! 点伤害两次 。"
@@ -71,7 +75,7 @@
 		"NAME": "激情的Revue",
 		"DESCRIPTION": "固有 。 NL 抽 !M! 张牌。",
 		"UPGRADE_DESCRIPTION": "抽牌直到手牌满，打出其中1张后， NL 弃置其余。",
-		"FLAVOR": "夜尽天明，迎来真昼。"
+		"FLAVOR": "歌唱，跳舞，互相争夺吧。"
 	},
 	"ShoujoKagekiNana:PromisedRevue": {
 		"NAME": "约定的Revue",
@@ -132,7 +136,7 @@
 	},
 	"ShoujoKagekiNana:Build": {
 		"NAME": "高塔建立之时",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 获取时，牌池中的卡牌伤害+1。",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 加入牌组时， NL 牌池中的卡牌伤害+1。",
 		"FLAVOR": "如饥似渴地追求新的舞台，这就是舞台少女。"
 	},
 	"ShoujoKagekiNana:Exist": {
