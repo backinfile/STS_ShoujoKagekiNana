@@ -20,7 +20,7 @@ public class PromisedRevue extends BaseCard {
     public static final String ID = makeID(PromisedRevue.class.getSimpleName());
 
     public PromisedRevue() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = this.damage = 10;
         baseMagicNumber = magicNumber = 3;
     }

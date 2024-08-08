@@ -46,5 +46,10 @@
     "TEXT": ["选择卡牌加入牌组"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
+  },
+  "ShoujoKagekiNana:ExhaustHandCardAction": {
+    "TEXT": ["消耗"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
   }
 }

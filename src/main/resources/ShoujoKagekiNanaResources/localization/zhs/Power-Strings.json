@@ -18,5 +18,11 @@
 		"DESCRIPTIONS": [
 			"回合开始时，抽 #y", " 张牌, 打出其中 #y1 张后，弃置其余。"
 		]
+	},
+	"ShoujoKagekiNana:HelloPower": {
+		"NAME": "打招呼",
+		"DESCRIPTIONS": [
+			"回合结束时，消耗 #y", " 张牌，然后对随机敌人造成其伤害值的伤害。"
+		]
 	}
 }

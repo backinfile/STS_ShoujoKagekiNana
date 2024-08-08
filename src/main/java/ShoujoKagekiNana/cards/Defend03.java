@@ -24,7 +24,7 @@ public class Defend03 extends BaseCard {
     public static final String ID = makeID(Defend03.class.getSimpleName());
 
     public Defend03() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         baseDamage = 5;
         baseBlock = 5;
 //        DisposableVariable.setBaseValue(this, 6);

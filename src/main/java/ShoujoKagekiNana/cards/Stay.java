@@ -28,7 +28,7 @@ public class Stay extends BaseCard {
     public Stay() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         baseBlock = 8;
-        DisposableVariable.setBaseValue(this, 9);
+//        DisposableVariable.setBaseValue(this, 9);
     }
 
     @Override
@@ -58,7 +58,7 @@ public class Stay extends BaseCard {
         if (!upgraded) {
             upgradeName();
 //            upgradeDamage(2);
-            upgradeBlock(4);
+            upgradeBlock(3);
             initializeDescription();
         }
     }
