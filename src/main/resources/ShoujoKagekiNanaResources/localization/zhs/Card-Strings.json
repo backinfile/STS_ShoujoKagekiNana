@@ -59,7 +59,13 @@
 	},
 	"ShoujoKagekiNana:JealousRevue": {
 		"NAME": "嫉妒的Revue",
-		"DESCRIPTION": "抽牌直到手牌满，打出其中1张后， NL 弃置其余。 NL 消耗 。",
+		"DESCRIPTION": "抽牌直到手牌满， NL 打出其中1张后， NL 弃置其余。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "抽牌直到手牌满， NL 打出其中1张后， NL 弃置其余。",
+		"FLAVOR": "夜尽天明，迎来真昼。"
+	},
+	"ShoujoKagekiNana:PassionateRevue": {
+		"NAME": "激情的Revue",
+		"DESCRIPTION": "固有 。 NL 抽 !M! 张牌。",
 		"UPGRADE_DESCRIPTION": "抽牌直到手牌满，打出其中1张后， NL 弃置其余。",
 		"FLAVOR": "夜尽天明，迎来真昼。"
 	},
