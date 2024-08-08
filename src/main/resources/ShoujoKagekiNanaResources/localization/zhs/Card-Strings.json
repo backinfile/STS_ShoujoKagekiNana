@@ -53,11 +53,15 @@
 	},
 	"ShoujoKagekiNana:Defend02": {
 		"NAME": "腾空",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌，打出其中1张后，弃置其余。"
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌，打出其中1张时，弃置其余。"
 	},
 	"ShoujoKagekiNana:Defend03": {
 		"NAME": "若是无动于衷",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 点 格挡。 NL 当你强化牌池时，同时强化此牌。"
+	},
+	"ShoujoKagekiNana:Stay": {
+		"NAME": "星光下的种子",
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 将此牌加入牌组时，移除1张 *打击 。"
 	},
 	"ShoujoKagekiNana:DesireRevue": {
 		"NAME": "渴望的Revue",
@@ -67,14 +71,14 @@
 	},
 	"ShoujoKagekiNana:JealousRevue": {
 		"NAME": "嫉妒的Revue",
-		"DESCRIPTION": "抽牌直到手牌满， NL 打出其中1张后， NL 弃置其余。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "抽牌直到手牌满， NL 打出其中1张后， NL 弃置其余。",
+		"DESCRIPTION": "抽牌直到手牌满， NL 打出其中1张时， NL 弃置其余。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "抽牌直到手牌满， NL 打出其中1张时， NL 弃置其余。",
 		"FLAVOR": "夜尽天明，迎来真昼。"
 	},
 	"ShoujoKagekiNana:PassionateRevue": {
 		"NAME": "激情的Revue",
 		"DESCRIPTION": "固有 。 NL 抽 !M! 张牌。",
-		"UPGRADE_DESCRIPTION": "抽牌直到手牌满，打出其中1张后， NL 弃置其余。",
+		"UPGRADE_DESCRIPTION": "抽牌直到手牌满，打出其中1张时， NL 弃置其余。",
 		"FLAVOR": "歌唱，跳舞，互相争夺吧。"
 	},
 	"ShoujoKagekiNana:PromisedRevue": {
