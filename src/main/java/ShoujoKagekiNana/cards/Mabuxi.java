@@ -20,9 +20,10 @@ public class Mabuxi extends BaseCard {
     public static final String ID = makeID(Mabuxi.class.getSimpleName());
 
     public Mabuxi() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
 //        baseDamage = 5;
 //        baseBlock = 5;
+        this.magicNumber = this.baseMagicNumber = 2;
         DisposableVariable.setBaseValue(this, 9);
     }
 
@@ -30,7 +31,7 @@ public class Mabuxi extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
 //        addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 //        addToBot(new GainBlockAction(p, block));
-        addToBot(new GainEnergyAction(2));
+        addToBot(new GainEnergyAction(magicNumber));
         addToBot(new InstantAction(() -> {
             for (AbstractCard card : p.hand.group) {
                 CardModifierManager.addModifier(card, new InstantModifier());
@@ -42,7 +43,9 @@ public class Mabuxi extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeMagicNumber(1);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

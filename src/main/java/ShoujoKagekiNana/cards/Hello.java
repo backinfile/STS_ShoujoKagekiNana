@@ -13,7 +13,7 @@ public class Hello extends BaseCard {
     public static final String ID = makeID(Hello.class.getSimpleName());
 
     public Hello() {
-        super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = 1;
     }
 
@@ -26,7 +26,7 @@ public class Hello extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeBaseCost(1);
 //            initializeDescription();
         }
     }

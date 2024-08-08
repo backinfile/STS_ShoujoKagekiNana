@@ -171,6 +171,7 @@
 	"ShoujoKagekiNana:Mabuxi": {
 		"NAME": "可能",
 		"DESCRIPTION": "获得 [E] [E] 。 NL 当你打出手牌中的1张牌时，弃置其余。",
+		"UPGRADE_DESCRIPTION": "获得 [E] [E] [E] 。 NL 当你打出手牌中的1张牌时，弃置其余。",
 		"FLAVOR": "你心中也有吧，耀眼的舞台。"
 	},
 	"D_ShoujoKageki:Promise": {

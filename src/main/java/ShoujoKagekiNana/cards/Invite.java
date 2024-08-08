@@ -4,6 +4,7 @@ import ShoujoKagekiCore.token.TokenCardField;
 import ShoujoKagekiNana.actions.CopyHandCardToDeckAction;
 import ShoujoKagekiNana.powers.HotBananaPower;
 import ShoujoKagekiNana.powers.InvitePower;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static ShoujoKagekiNana.ModPath.makeID;
 
-
+@AutoAdd.Ignore
 public class Invite extends BaseCard {
     public static final String ID = makeID(Invite.class.getSimpleName());
 
