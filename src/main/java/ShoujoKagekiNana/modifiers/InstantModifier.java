@@ -26,6 +26,11 @@ public class InstantModifier extends AbstractCardModifier {
 
 
     @Override
+    public boolean shouldApply(AbstractCard card) {
+        return !CardModifierManager.hasModifier(card, ID);
+    }
+
+    @Override
     public void onUpdate(AbstractCard card) {
         card.targetTransparency = 0.8f;
     }

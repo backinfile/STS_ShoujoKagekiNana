@@ -48,7 +48,7 @@ public class Stay extends BaseCard {
         if (!strikes.isEmpty()) {
             AbstractCard card = strikes.get(0);
             CardCrawlGame.metricData.addPurgedItem(card.getMetricID());
-            AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(card, (float) Settings.WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+            AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(card, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
             AbstractDungeon.player.masterDeck.removeCard(card);
         }
     }
