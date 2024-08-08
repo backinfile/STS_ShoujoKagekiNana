@@ -22,6 +22,8 @@ public class TopPanelDisposedPileBtn extends TopPanelItem {
     public static final String ID = ModPath.makeID(TopPanelDisposedPileBtn.class.getSimpleName());
     public static final UIStrings UI_STRINGS = CardCrawlGame.languagePack.getUIString(ID);
     public static final String[] TEXT = UI_STRINGS.TEXT;
+    public static final float DISPOSED_PILE_BTN_X = Settings.WIDTH - (64f + 10f) * 5 * Settings.scale;
+    public static final float DISPOSED_PILE_BTN_Y = Settings.HEIGHT - 64.0F * Settings.scale;
     private boolean isOpen = false;
     private final static Color DISABLE_COLOR = new Color(1.0F, 1.0F, 1.0F, 0.4F);
 
@@ -41,8 +43,8 @@ public class TopPanelDisposedPileBtn extends TopPanelItem {
 
     public TopPanelDisposedPileBtn() {
         super(IMG, ID);
-        this.setX(Settings.WIDTH - (64f + 10f) * 5 * Settings.scale);
-        this.setY(Settings.HEIGHT - 64.0F * Settings.scale);
+        this.setX(DISPOSED_PILE_BTN_X);
+        this.setY(DISPOSED_PILE_BTN_Y);
     }
 
     @Override

@@ -2,6 +2,7 @@ package ShoujoKagekiNana.actions;
 
 import ShoujoKagekiCore.util.Utils2;
 import ShoujoKagekiNana.cards.Defend03;
+import ShoujoKagekiNana.effects.UpgradeStageShineEffect;
 import ShoujoKagekiNana.stagePool.StagePoolManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -37,6 +38,7 @@ public class StageCardPowerUpAction extends AbstractGameAction {
                 consumer.accept(card);
             }
         }
+        AbstractDungeon.effectsQueue.add(new UpgradeStageShineEffect());
         isDone = true;
     }
 }
