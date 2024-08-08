@@ -12,8 +12,8 @@ public class Exist extends BaseCard {
     public static final String ID = ModPath.makeID(Exist.class.getSimpleName());
 
     public Exist() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
-        exhaust = true;
+        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
+//        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -22,7 +22,7 @@ public class PromisedRevue extends BaseCard {
     public PromisedRevue() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         this.baseDamage = this.damage = 10;
-        baseMagicNumber = magicNumber = 2;
+        baseMagicNumber = magicNumber = 3;
     }
 
     @Override
@@ -39,8 +39,8 @@ public class PromisedRevue extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(2);
-            upgradeMagicNumber(1);
+            upgradeDamage(4);
+//            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

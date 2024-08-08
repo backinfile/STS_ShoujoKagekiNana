@@ -15,11 +15,10 @@ public class StageClose extends BaseCard {
     public static final String ID = ModPath.makeID(StageClose.class.getSimpleName());
 
     public StageClose() {
-        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         baseBlock = block = 9;
         exhaust = true;
-//        DisposableVariable.setBaseValue(this, 6);
-
+        DisposableVariable.setBaseValue(this, 6);
         this.tags.add(CardTags.HEALING);
     }
 

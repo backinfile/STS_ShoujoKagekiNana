@@ -1,5 +1,6 @@
 package ShoujoKagekiNana.cards;
 
+import ShoujoKagekiCore.shine.DisposableVariable;
 import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.actions.StageCardPowerUpAction;
 import ShoujoKagekiNana.actions.StageDiscoveryAction;
@@ -18,6 +19,7 @@ public class Done extends BaseCard {
         this.baseBlock = this.block = 12;
         exhaust = true;
         this.tags.add(CardTags.HEALING);
+        DisposableVariable.setBaseValue(this, 6);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

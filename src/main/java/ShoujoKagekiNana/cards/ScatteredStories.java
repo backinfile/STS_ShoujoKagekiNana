@@ -16,8 +16,8 @@ public class ScatteredStories extends BaseCard {
     public ScatteredStories() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         exhaust = true;
-        this.tags.add(CardTags.HEALING);
         this.magicNumber = this.baseMagicNumber = 3;
+//        this.tags.add(CardTags.HEALING);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -26,11 +26,11 @@ public class ScatteredStories extends BaseCard {
             for (int i = 0; i < cnt; i++) {
                 CardModifierManager.addModifier(c, new AddDamageModifier());
             }
-            addToTop(new StageCardSinglePowerUpAction(c, c2 -> {
-                for (int i = 0; i < cnt; i++) {
-                    CardModifierManager.addModifier(c2, new AddDamageModifier());
-                }
-            }));
+//            addToTop(new StageCardSinglePowerUpAction(c, c2 -> {
+//                for (int i = 0; i < cnt; i++) {
+//                    CardModifierManager.addModifier(c2, new AddDamageModifier());
+//                }
+//            }));
         }));
     }
 

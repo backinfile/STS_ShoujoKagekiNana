@@ -13,11 +13,12 @@ public class Invite extends BaseCard {
 
     public Invite() {
         super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.NONE);
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new HotBananaPower(1)));
+        addToBot(new ApplyPowerAction(p, p, new HotBananaPower(magicNumber)));
     }
 
     @Override

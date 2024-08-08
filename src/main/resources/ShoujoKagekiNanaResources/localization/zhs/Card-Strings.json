@@ -59,7 +59,8 @@
 	},
 	"ShoujoKagekiNana:JealousRevue": {
 		"NAME": "嫉妒的Revue",
-		"DESCRIPTION": "抽 !M! 张牌，丢弃其中的非 闪耀 牌。",
+		"DESCRIPTION": "抽牌直到手牌满，打出其中1张后， NL 弃置其余。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "抽牌直到手牌满，打出其中1张后， NL 弃置其余。",
 		"FLAVOR": "夜尽天明，迎来真昼。"
 	},
 	"ShoujoKagekiNana:PromisedRevue": {
@@ -74,8 +75,8 @@
 	},
 	"ShoujoKagekiNana:IKnown": {
 		"NAME": "我全都知道哦",
-		"DESCRIPTION": "发现 1张牌，获得获得其伤害或 格挡 数值的 格挡 。",
-		"UPGRADE_DESCRIPTION": "发现 1张牌，获得获得其伤害或 格挡 数值+ !M! 的 格挡 。",
+		"DESCRIPTION": "发现 1张牌，获得获得其伤害或 格挡 数值的 格挡 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "发现 1张牌，获得获得其伤害或 格挡 数值+ !M! 的 格挡 。 NL 消耗 。",
 		"FLAVOR": ""
 	},
 	"ShoujoKagekiNana:OutOfReach": {
@@ -100,7 +101,7 @@
 	},
 	"ShoujoKagekiNana:Invite": {
 		"NAME": "长颈鹿的邀请",
-		"DESCRIPTION": "每回合第一次打出 闪耀 牌时，获得 [E] ，抽 1 张牌。",
+		"DESCRIPTION": "回合开始时，抽 !M! 张牌, 打出其中 1 张后，弃置其余。",
 		"FLAVOR": ""
 	},
 	"ShoujoKagekiNana:GAOU": {
@@ -125,7 +126,7 @@
 	},
 	"ShoujoKagekiNana:Exist": {
 		"NAME": "很耀眼吗？",
-		"DESCRIPTION": "发现 1张牌，获得与其耗能相等的 [E] 。 NL 消耗 。",
+		"DESCRIPTION": "发现 1张牌，获得与其耗能相等的 [E] 。",
 		"FLAVOR": "真的可以得到任何舞台吗？任何时间的任何舞台都可以吗？"
 	},
 	"ShoujoKagekiNana:OutOfStory": {

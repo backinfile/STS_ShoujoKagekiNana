@@ -36,7 +36,8 @@ public class GAOU extends BaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            upgradeMagicNumber(1);
+//            upgradeMagicNumber(1);
+            upgradeBaseCost(1);
             initializeDescription();
         }
     }

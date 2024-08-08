@@ -2,7 +2,7 @@ package ShoujoKagekiNana.cards;
 
 import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.actions.InstantAction;
-import ShoujoKagekiNana.modifiers.TransparencyModifier;
+import ShoujoKagekiNana.modifiers.InstantModifier;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -26,7 +26,7 @@ public class Defend02 extends BaseCard {
         this.addToBot(new GainBlockAction(p, block));
         addToBot(new DrawCardAction(magicNumber, new InstantAction(() -> {
             for (AbstractCard card : DrawCardAction.drawnCards) {
-                CardModifierManager.addModifier(card, new TransparencyModifier());
+                CardModifierManager.addModifier(card, new InstantModifier());
             }
         })));
     }

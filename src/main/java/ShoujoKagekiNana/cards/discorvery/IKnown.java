@@ -11,8 +11,9 @@ public class IKnown extends BaseCard {
     public static final String ID = ModPath.makeID(IKnown.class.getSimpleName());
 
     public IKnown() {
-        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseMagicNumber = this.magicNumber = 4;
+        exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

@@ -6,7 +6,6 @@ import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -16,8 +15,8 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TransparencyModifier extends AbstractCardModifier {
-    public static final String ID = ModPath.makeID(TransparencyModifier.class.getSimpleName());
+public class InstantModifier extends AbstractCardModifier {
+    public static final String ID = ModPath.makeID(InstantModifier.class.getSimpleName());
     public static UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ID);
 
     @Override
@@ -69,6 +68,6 @@ public class TransparencyModifier extends AbstractCardModifier {
 
     @Override
     public AbstractCardModifier makeCopy() {
-        return new TransparencyModifier();
+        return new InstantModifier();
     }
 }

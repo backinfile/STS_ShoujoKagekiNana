@@ -24,7 +24,7 @@ public class DesireRevue extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, magicNumber)));
-        addToBot(new GainEnergyAction(magicNumber));
+        addToBot(new GainEnergyAction(1));
     }
 
     @Override
