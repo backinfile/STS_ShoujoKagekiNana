@@ -19,7 +19,7 @@ public class WildScreenBaroque extends BaseCard {
 
     public WildScreenBaroque() {
         super(ID, 1, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
-        baseDamage = 15;
+        baseDamage = 12;
         DisposableVariable.setBaseValue(this, 9);
         exhaust = true;
         this.tags.add(CardTags.HEALING);
@@ -35,7 +35,7 @@ public class WildScreenBaroque extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(5);
+            upgradeDamage(4);
             initializeDescription();
         }
     }

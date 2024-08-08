@@ -14,9 +14,10 @@ public class PassionateRevue extends BaseCard {
     public static final String ID = ModPath.makeID(PassionateRevue.class.getSimpleName());
 
     public PassionateRevue() {
-        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        isInnate = true;
         this.magicNumber = this.baseMagicNumber = 3;
-        DisposableVariable.setBaseValue(this, 6);
+        DisposableVariable.setBaseValue(this, 9);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

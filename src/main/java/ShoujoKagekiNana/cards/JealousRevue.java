@@ -15,7 +15,7 @@ public class JealousRevue extends BaseCard {
     public static final String ID = makeID(JealousRevue.class.getSimpleName());
 
     public JealousRevue() {
-        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
         baseMagicNumber = magicNumber = 4;
         exhaust = true;
     }

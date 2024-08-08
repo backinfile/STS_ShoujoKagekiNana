@@ -1,6 +1,7 @@
 package ShoujoKagekiNana.cards;
 
 import ShoujoKagekiNana.powers.HotBananaPower;
+import ShoujoKagekiNana.powers.InvitePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -18,7 +19,7 @@ public class Invite extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new HotBananaPower(magicNumber)));
+        addToBot(new ApplyPowerAction(p, p, new InvitePower(magicNumber)));
     }
 
     @Override

@@ -17,7 +17,7 @@
 	},
 	"ShoujoKagekiNana:Attack04": {
 		"NAME": "劈砍",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 如果此牌为 衍生牌 ， 获得 [E] 。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 如果此牌为 衍生牌 ， NL 获得 [E] 。"
 	},
 	"ShoujoKagekiNana:Attack02": {
 		"NAME": "朝向你的所在",
