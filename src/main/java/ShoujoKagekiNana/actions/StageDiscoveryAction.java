@@ -18,23 +18,29 @@ import java.util.function.Consumer;
 
 public class StageDiscoveryAction extends AbstractGameAction {
     public static final UIStrings uiString = CardCrawlGame.languagePack.getUIString(ModPath.makeID(StageDiscoveryAction.class.getSimpleName()));
+    private final AbstractCard.CardType cardType;
     private boolean retrieveCard = false;
     private final Consumer<AbstractCard> consumer;
 
     public StageDiscoveryAction() {
-        this(null);
+        this(1, null, null);
     }
 
     public StageDiscoveryAction(Consumer<AbstractCard> consumer) {
+        this(1, null, consumer);
+    }
+
+    public StageDiscoveryAction(int amount, AbstractCard.CardType cardType, Consumer<AbstractCard> consumer) {
+        this.amount = amount;
+        this.cardType = cardType;
         this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
         this.duration = Settings.ACTION_DUR_FAST;
-        this.amount = 1;
         this.consumer = consumer;
     }
 
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
-            ArrayList<AbstractCard> generatedCards = StagePoolManager.popCard(3);
+            ArrayList<AbstractCard> generatedCards = StagePoolManager.popCard(3, cardType);
             if (generatedCards.isEmpty()) {
                 isDone = true;
                 return;
@@ -44,23 +50,22 @@ public class StageDiscoveryAction extends AbstractGameAction {
         } else {
             if (!this.retrieveCard) {
                 if (AbstractDungeon.cardRewardScreen.discoveryCard != null) {
-                    AbstractCard disCard = AbstractDungeon.cardRewardScreen.discoveryCard.makeStatEquivalentCopy();
-                    if (AbstractDungeon.player.hasPower("MasterRealityPower")) {
-                        disCard.upgrade();
-                    }
-                    if (consumer != null) {
-                        consumer.accept(disCard);
-                    }
-//                    disCard.setCostForTurn(0);
-
-                    disCard.current_x = -1000.0F * Settings.xScale;
-                    if (AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(disCard, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
-                    } else {
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(disCard, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
-                    }
-
+                    AbstractCard copy = AbstractDungeon.cardRewardScreen.discoveryCard;
                     AbstractDungeon.cardRewardScreen.discoveryCard = null;
+                    int handSize = AbstractDungeon.player.hand.size();
+                    for (int i = 0; i < amount; i++) {
+                        AbstractCard card = copy.makeStatEquivalentCopy();
+                        if (AbstractDungeon.player.hasPower("MasterRealityPower")) {
+                            card.upgrade();
+                        }
+                        if (consumer != null) consumer.accept(card);
+                        card.current_x = -1000.0F * Settings.xScale;
+                        if (handSize + i + 1 <= BaseMod.MAX_HAND_SIZE) {
+                            AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(card, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+                        } else {
+                            AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(card, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+                        }
+                    }
                 }
 
                 this.retrieveCard = true;

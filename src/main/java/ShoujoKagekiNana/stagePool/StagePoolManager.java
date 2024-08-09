@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.random.Random;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class StagePoolManager {
     public static final ArrayList<AbstractCard> cardPool = new ArrayList<>();
@@ -90,6 +91,24 @@ public class StagePoolManager {
         return copy;
     }
 
+
+    public static ArrayList<AbstractCard> popCard(int number, AbstractCard.CardType cardType) {
+        if (cardType == null) return popCard(number);
+        ArrayList<AbstractCard> result = new ArrayList<>();
+        LinkedList<AbstractCard> pool = new LinkedList<>();
+        for (AbstractCard card : cardPool) {
+            if (card.type == cardType && !card.hasTag(AbstractCard.CardTags.HEALING)) pool.add(card);
+        }
+        Collections.shuffle(pool, new java.util.Random(AbstractDungeon.cardRandomRng.randomLong()));
+        while (result.size() < number) {
+            AbstractCard card = pool.pop();
+            if (result.stream().noneMatch(c -> c.cardID.equals(card.cardID))) {
+                result.add(card);
+            }
+        }
+        return result;
+    }
+
     public static ArrayList<AbstractCard> popCard(int number) {
         ArrayList<AbstractCard> result = new ArrayList<>();
         while (result.size() < number) {
@@ -110,7 +129,6 @@ public class StagePoolManager {
         }
         return copy;
     }
-
 
     private static void refreshCardQueue() {
         cardQueueInBattle.clear();

@@ -2,8 +2,10 @@ package ShoujoKagekiNana.stagePool.patches;
 
 import ShoujoKagekiNana.Log;
 import ShoujoKagekiNana.ModPath;
+import ShoujoKagekiNana.actions.StageDiscoveryAction;
 import ShoujoKagekiNana.stagePool.StagePoolManager;
 import basemod.BaseMod;
+import basemod.ReflectionHacks;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.abstracts.CustomSavable;
 import basemod.helpers.CardModifierManager;
@@ -16,6 +18,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
+import com.megacrit.cardcrawl.actions.unique.DiscoveryAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardSave;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -254,14 +257,21 @@ public class StagePoolSavePatch {
     }
 
 
-//    @SpirePatch2(
-//            clz = SaveFile.class,
-//            method = "<ctor>",
-//            paramtypez = {SaveFile.SaveType.class}
-//    )
-//    public static class Render {
-//        public static void Postfix(SaveFile __instance) {
-//            Log.logger.info("ConstructSaveFilePatch = {}", ModSaves.cardModifierSaves.get(__instance));
-//        }
-//    }
+    // replace DiscoveryAction
+    @SpirePatch2(
+            clz = DiscoveryAction.class,
+            method = "update"
+    )
+    public static class Render {
+        public static SpireReturn<Void> Prefix(DiscoveryAction __instance) {
+            boolean returnColorless = ReflectionHacks.getPrivate(__instance, DiscoveryAction.class, "returnColorless");
+            if (returnColorless) {
+                return SpireReturn.Continue();
+            }
+            AbstractCard.CardType cardType = ReflectionHacks.getPrivate(__instance, DiscoveryAction.class, "cardType");
+            __instance.isDone = true;
+            AbstractDungeon.actionManager.addToTop(new StageDiscoveryAction(__instance.amount, cardType, c -> c.setCostForTurn(0)));
+            return SpireReturn.Return();
+        }
+    }
 }
