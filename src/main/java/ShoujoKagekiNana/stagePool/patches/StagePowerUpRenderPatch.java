@@ -1,9 +1,7 @@
 package ShoujoKagekiNana.stagePool.patches;
 
 import ShoujoKagekiNana.ModPath;
-import ShoujoKagekiNana.modifiers.AddBlockModifier;
 import ShoujoKagekiNana.modifiers.AddDamageModifier;
-import ShoujoKagekiNana.stances.patches.StancePatches;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.Gdx;
@@ -14,17 +12,12 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.helpers.PowerTip;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.stances.AbstractStance;
-import javassist.CtBehavior;
 
 import java.util.ArrayList;
 
-public class StagePowerUpPatch {
+public class StagePowerUpRenderPatch {
 
     private static final float offsetX_ori = 0;
     private static final float offsetY_ori = -90; //-68;

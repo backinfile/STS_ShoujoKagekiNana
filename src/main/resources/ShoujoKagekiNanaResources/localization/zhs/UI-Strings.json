@@ -38,7 +38,7 @@
     "TEXT_DICT": {}
   },
   "ShoujoKagekiNana:InstantModifier": {
-    "TEXT": ["瞬间", "打出具有瞬间的牌后，丢弃其他具有瞬间的牌。"],
+    "TEXT": ["瞬间", "打出具有瞬间的牌后，丢弃其他具有瞬间的牌。 NL 回合结束或被弃置时，失去瞬间。", "瞬间 。", " NL "],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
   },

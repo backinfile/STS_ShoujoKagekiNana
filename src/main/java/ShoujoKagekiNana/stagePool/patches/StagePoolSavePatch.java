@@ -19,16 +19,12 @@ import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardSave;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.random.Random;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
-import javassist.CtBehavior;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,22 +33,17 @@ import java.util.stream.Collectors;
 import static basemod.patches.com.megacrit.cardcrawl.core.CardCrawlGame.LoadPlayerSaves.getErrorMod;
 
 @SpireInitializer
-public class StagePoolPatch {
+public class StagePoolSavePatch {
 
     private static Gson gson = null;
 
-    public static ArrayList<AbstractCard> cache_stage_pool_cards;
-
     public static void initialize() {
         BaseMod.subscribe((OnStartBattleSubscriber) abstractRoom -> StagePoolManager.onBattleStart());
-
         BaseMod.addSaveField(ModPath.makeID("stage_pool_seed_count"), new CustomSavable<Integer>() {
             @Override
             public Integer onSave() {
-                if (StagePoolManager.rng != null) {
-                    return StagePoolManager.rng.counter;
-                }
-                return 0;
+                if (StagePoolManager.rng == null) return 0;
+                return StagePoolManager.rng.counter;
             }
 
             @Override
@@ -75,7 +66,6 @@ public class StagePoolPatch {
                 StagePoolManager.stage_remove_count = integer;
             }
         });
-
         BaseMod.addSaveField(ModPath.makeID("stage_pool_cards"), new CustomSavable<ArrayListOfCardSaveWithModifier>() {
             @Override
             public ArrayListOfCardSaveWithModifier onSave() {
@@ -94,24 +84,26 @@ public class StagePoolPatch {
             @Override
             public void onLoad(ArrayListOfCardSaveWithModifier cardSaveWithModifiers) {
                 if (cardSaveWithModifiers == null) {
-                    cache_stage_pool_cards = null;
+                    StagePoolManager.cardPool.clear();
                     return;
                 }
                 initGson();
-                cache_stage_pool_cards = new ArrayList<>();
+                StagePoolManager.cardPool.clear();
                 for (CardSaveWithModifier cardSave : cardSaveWithModifiers) {
                     AbstractCard card = CardLibrary.getCopy(cardSave.cardSave.id, cardSave.cardSave.upgrades, cardSave.cardSave.misc);
                     loadCardModifiers(card, cardSave.modifiers);
-                    cache_stage_pool_cards.add(card);
+                    StagePoolManager.cardPool.add(card);
                 }
-                Log.logger.info("onLoad stage_pool_cards = {}", cache_stage_pool_cards.size());
+                StagePoolManager.afterLoadCardPool();
+                Log.logger.info("onLoad stage_pool_cards = {}", StagePoolManager.cardPool.size());
             }
         });
 
         BaseMod.subscribe((PreStartGameSubscriber) () -> {
             StagePoolManager.rng = null;
             StagePoolManager.stage_remove_count = 0;
-            cache_stage_pool_cards = null;
+            StagePoolManager.cardPool.clear();
+//            cache_stage_pool_cards = null;
             Log.logger.info("clear data on new game start");
         });
 
@@ -162,22 +154,16 @@ public class StagePoolPatch {
             method = SpirePatch.CONSTRUCTOR,
             paramtypez = {String.class, String.class, AbstractPlayer.class, ArrayList.class}
     )
-    public static class _LoadPatch {
-        public static void Postfix(AbstractDungeon __instance) {
-            if (__instance instanceof Exordium) {
-                StagePoolManager.loadCardPool(null);
-            }
-        }
-    }
-
     @SpirePatch2(
             clz = AbstractDungeon.class,
             method = SpirePatch.CONSTRUCTOR,
             paramtypez = {String.class, AbstractPlayer.class, SaveFile.class}
     )
-    public static class _LoadPatch2 {
-        public static void Postfix(AbstractDungeon __instance, SaveFile saveFile) {
-            StagePoolManager.loadCardPool(saveFile);
+    public static class _LoadPatch {
+        public static void Postfix(AbstractDungeon __instance) {
+            if (__instance instanceof Exordium) {
+                StagePoolManager.initDungeon();
+            }
         }
     }
 

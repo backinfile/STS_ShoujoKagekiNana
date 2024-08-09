@@ -19,6 +19,8 @@ public class InstantModifier extends AbstractCardModifier {
     public static final String ID = ModPath.makeID(InstantModifier.class.getSimpleName());
     public static UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ID);
 
+    private long endTime = 0;
+
     @Override
     public String identifier(AbstractCard card) {
         return ID;
@@ -32,7 +34,10 @@ public class InstantModifier extends AbstractCardModifier {
 
     @Override
     public void onUpdate(AbstractCard card) {
-        card.targetTransparency = 0.8f;
+        if (System.currentTimeMillis() > endTime) {
+            endTime = System.currentTimeMillis() + 500;
+            card.targetTransparency = 0.8f;
+        }
     }
 
     @Override
@@ -63,6 +68,14 @@ public class InstantModifier extends AbstractCardModifier {
     public void onRemove(AbstractCard card) {
         card.unfadeOut();
     }
+
+//    @Override
+//    public String modifyDescription(String rawDescription, AbstractCard card) {
+//        if (rawDescription.equals("")) {
+//            return uiStrings.TEXT[2];
+//        }
+//        return uiStrings.TEXT[2] + uiStrings.TEXT[3] + rawDescription;
+//    }
 
     @Override
     public List<TooltipInfo> additionalTooltips(AbstractCard card) {

@@ -2,17 +2,14 @@ package ShoujoKagekiNana.stagePool;
 
 import ShoujoKagekiCore.token.TokenCardField;
 import ShoujoKagekiNana.Log;
-import ShoujoKagekiNana.stagePool.patches.StagePoolPatch;
 import ShoujoKagekiNana.util.Util;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.random.Random;
-import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class StagePoolManager {
     public static final ArrayList<AbstractCard> cardPool = new ArrayList<>();
@@ -22,10 +19,32 @@ public class StagePoolManager {
 
     public static Random rng;
 
-    public static void loadCardPool(SaveFile saveFile) {
+
+    public static void afterLoadCardPool() {
+        Log.logger.info("afterLoadCardPool");
+        // make copy
+        ArrayList<AbstractCard> tmp = new ArrayList<>(cardPool);
         cardPool.clear();
-        if (StagePoolPatch.cache_stage_pool_cards == null) {
-            Log.logger.info("loadCardPool cache_stage_pool_cards == null");
+        for (AbstractCard card : tmp) {
+            cardPool.add(card.makeStatEquivalentCopy());
+        }
+        // set token
+        for (AbstractCard card : cardPool) {
+            TokenCardField.isToken.set(card, false);
+        }
+        Log.logger.info("load card pool count = {}", cardPool.size());
+    }
+
+    public static void initDungeon() {
+        Log.logger.info("initDungeon");
+        if (rng == null) {
+            StagePoolManager.rng = new Random(Settings.seed);
+            Log.logger.info("init rng with initDungeon");
+        }
+
+        if (CardCrawlGame.saveFile == null) {
+            Log.logger.info("init cardPool with initDungeon, saveFile == null");
+            cardPool.clear();
             AbstractDungeon.player.getCardPool(cardPool);
             cardPool.sort((card, card2) -> {
                 int c1 = card.rarity.compareTo(card2.rarity);
@@ -34,68 +53,17 @@ public class StagePoolManager {
                 if (c2 != 0) return c2;
                 return card.cardID.compareTo(card2.cardID);
             });
-        } else {
-            Log.logger.info("loadCardPool cache_stage_pool_cards != null");
-            cardPool.addAll(StagePoolPatch.cache_stage_pool_cards);
-            StagePoolPatch.cache_stage_pool_cards = null;
+            afterLoadCardPool();
         }
-
-        // make copy
-        ArrayList<AbstractCard> tmp = new ArrayList<>(cardPool);
-        cardPool.clear();
-        for (AbstractCard card : tmp) {
-            cardPool.add(card.makeStatEquivalentCopy());
-        }
-
-        // set token
-        for (AbstractCard card : cardPool) {
-            TokenCardField.isToken.set(card, false);
-        }
-        Log.logger.info("load card pool count = {}", cardPool.size());
-
-        if (rng == null) {
-            StagePoolManager.rng = new Random(Settings.seed);
-            Log.logger.info("init rng with loadCardPool");
-        }
-
-        initializeCardPools();
-    }
-
-    public static void initializeCardPools() {
-        AbstractDungeon.commonCardPool.clear();
-        AbstractDungeon.uncommonCardPool.clear();
-        AbstractDungeon.rareCardPool.clear();
-//        AbstractDungeon.srcCommonCardPool.clear();
-//        AbstractDungeon.srcUncommonCardPool.clear();
-//        AbstractDungeon.srcRareCardPool.clear();
-
-        for (AbstractCard card : cardPool) {
-            switch (card.rarity) {
-                case COMMON:
-                    AbstractDungeon.commonCardPool.addToTop(card);
-//                    AbstractDungeon.srcCommonCardPool.addToBottom(card);
-                    break;
-                case UNCOMMON:
-                    AbstractDungeon.uncommonCardPool.addToTop(card);
-//                    AbstractDungeon.srcUncommonCardPool.addToBottom(card);
-                    break;
-                case RARE:
-                    AbstractDungeon.rareCardPool.addToTop(card);
-//                    AbstractDungeon.srcRareCardPool.addToBottom(card);
-                    break;
-            }
-        }
-        Log.logger.info("initializeCardPools count = {}", cardPool.size());
     }
 
     public static void onBattleStart() {
         refreshCardQueue();
     }
 
-    public static void removeCard(AbstractCard remove) {
+    public static void removeCardFromStage(AbstractCard remove) {
         Util.removeFirst(cardPool, c -> c.cardID.equals(remove.cardID));
         Util.removeFirst(cardQueueInBattle, c -> c.cardID.equals(remove.cardID));
-        initializeCardPools();
         stage_remove_count++;
     }
 

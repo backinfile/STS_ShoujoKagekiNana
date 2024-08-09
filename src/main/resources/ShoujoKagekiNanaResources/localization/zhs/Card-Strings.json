@@ -13,7 +13,7 @@
 	},
 	"ShoujoKagekiNana:Attack06": {
 		"NAME": "我会替你全部承担",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 斩杀 时， 升级 你牌池中的一张随机牌。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 牌池中的卡牌伤害+1。 NL 消耗 。"
 	},
 	"ShoujoKagekiNana:Attack04": {
 		"NAME": "劈砍",
@@ -160,7 +160,7 @@
 	},
 	"ShoujoKagekiNana:WildScreenBaroque": {
 		"NAME": "狂野银幕巴洛克",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 牌池中的卡牌伤害+1。 NL 消耗 。",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 斩杀 时， 升级 你牌池中的一张随机牌。 NL 消耗 。",
 		"FLAVOR": "皆杀的Revue——开幕！歌唱！起舞！互相争夺吧！"
 	},
 	"ShoujoKagekiNana:EmptyStage": {

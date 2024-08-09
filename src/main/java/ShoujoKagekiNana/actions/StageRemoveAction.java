@@ -21,7 +21,7 @@ public class StageRemoveAction extends AbstractGameAction {
     }
 
     public static void DoInstant(AbstractCard card) {
-        StagePoolManager.removeCard(card);
+        StagePoolManager.removeCardFromStage(card);
         AbstractDungeon.effectList.add(new PurgeCardInBattleEffect(card));
     }
 }
