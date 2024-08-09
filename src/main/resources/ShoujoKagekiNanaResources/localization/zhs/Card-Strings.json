@@ -137,6 +137,11 @@
 		"DESCRIPTION": "发现 1张牌， NL 使其伤害+ !M! 。 NL 消耗 。",
 		"FLAVOR": ""
 	},
+	"ShoujoKagekiNana:Rondo": {
+		"NAME": "轮舞",
+		"DESCRIPTION": "本回合内，目标敌人受到攻击伤害时，抽 !M! 张牌 。 NL 消耗 。",
+		"FLAVOR": ""
+	},
 	"ShoujoKagekiNana:Jump": {
 		"NAME": "跳跃斩击",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 如果本回合打出过攻击牌，抽 !M! 张牌。",

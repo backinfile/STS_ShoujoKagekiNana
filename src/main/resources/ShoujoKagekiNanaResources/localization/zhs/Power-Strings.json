@@ -24,5 +24,11 @@
 		"DESCRIPTIONS": [
 			"回合结束时，消耗 #y", " 张牌，然后对随机敌人造成其伤害值的伤害。"
 		]
+	},
+	"ShoujoKagekiNana:RondoPower": {
+		"NAME": "轮舞",
+		"DESCRIPTIONS": [
+			"受到攻击伤害时，抽 #y"," 张牌 "
+		]
 	}
 }

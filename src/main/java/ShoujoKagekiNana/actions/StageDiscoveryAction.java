@@ -1,8 +1,11 @@
 package ShoujoKagekiNana.actions;
 
 import ShoujoKagekiNana.ModPath;
+import ShoujoKagekiNana.Res;
+import ShoujoKagekiNana.effects.BorderLongLongFlashEffect;
 import ShoujoKagekiNana.stagePool.StagePoolManager;
 import basemod.BaseMod;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,6 +13,8 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 
@@ -40,6 +45,7 @@ public class StageDiscoveryAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == Settings.ACTION_DUR_FAST) {
+            AbstractDungeon.topLevelEffectsQueue.add(new BorderLongLongFlashEffect(Res.NanaRenderColor.cpy(), 2, false));
             ArrayList<AbstractCard> generatedCards = StagePoolManager.popCard(3, cardType);
             if (generatedCards.isEmpty()) {
                 isDone = true;

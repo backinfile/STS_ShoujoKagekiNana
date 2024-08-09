@@ -18,7 +18,7 @@ public class ProudRevue extends BaseCard {
 
     public ProudRevue() {
         super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.ENEMY);
-        baseMagicNumber = magicNumber = 3;
+        baseMagicNumber = magicNumber = 2;
     }
 
     @Override
@@ -32,7 +32,7 @@ public class ProudRevue extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }
