@@ -31,6 +31,9 @@ public class Build extends BaseCard {
         baseDamage = 10;
         DisposableVariable.setBaseValue(this, 9);
 //        this.tags.add(CardTags.HEALING);
+
+        grayTextStartIndex = 1;
+        grayTextEndIndex = 2;
     }
 
     @Override

@@ -61,7 +61,7 @@
 	},
 	"ShoujoKagekiNana:Stay": {
 		"NAME": "星光下的种子",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 将此牌加入牌组时，移除1张 *打击 。"
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 将此牌加入牌组时， NL 移除1张 *打击 。"
 	},
 	"ShoujoKagekiNana:Hello": {
 		"NAME": "打招呼",
@@ -149,7 +149,7 @@
 	},
 	"ShoujoKagekiNana:Build": {
 		"NAME": "高塔建立之时",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 加入牌组时， NL 牌池中的卡牌伤害+1。",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 此牌加入牌组时， NL 牌池中的卡牌伤害+1。",
 		"FLAVOR": "如饥似渴地追求新的舞台，这就是舞台少女。"
 	},
 	"ShoujoKagekiNana:Exist": {

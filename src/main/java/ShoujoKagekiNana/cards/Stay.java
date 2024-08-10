@@ -29,6 +29,8 @@ public class Stay extends BaseCard {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         baseBlock = 8;
 //        DisposableVariable.setBaseValue(this, 9);
+        grayTextStartIndex = 1;
+        grayTextEndIndex = 2;
     }
 
     @Override
