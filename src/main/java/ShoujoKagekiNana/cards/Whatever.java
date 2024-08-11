@@ -18,9 +18,9 @@ public class Whatever extends BaseCard {
     public static final String ID = makeID(Whatever.class.getSimpleName());
 
     public Whatever() {
-        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         isMultiDamage = true;
-        this.baseDamage = this.damage = 15;
+        this.baseDamage = this.damage = 12;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class Whatever extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(5);
+            upgradeDamage(4);
             initializeDescription();
         }
     }
