@@ -24,7 +24,7 @@ public class Mabuxi extends BaseCard {
 //        baseDamage = 5;
 //        baseBlock = 5;
         this.magicNumber = this.baseMagicNumber = 2;
-        DisposableVariable.setBaseValue(this, 9);
+//        DisposableVariable.setBaseValue(this, 9);
     }
 
     @Override

@@ -55,6 +55,10 @@
 		"NAME": "腾空",
 		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌，使它们获得 瞬间 。"
 	},
+	"ShoujoKagekiNana:Prepare": {
+		"NAME": "舞台准备",
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 此牌加入牌组时， NL 牌池中的卡牌伤害+1。"
+	},
 	"ShoujoKagekiNana:Whatever": {
 		"NAME": "无论是谁",
 		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 使所有手牌获得 瞬间 。"
@@ -65,7 +69,7 @@
 	},
 	"ShoujoKagekiNana:Stay": {
 		"NAME": "星光下的种子",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 将此牌加入牌组时， NL 移除1张 *打击 。"
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 将此牌加入牌组时， NL 移除1张打击 。"
 	},
 	"ShoujoKagekiNana:Hello": {
 		"NAME": "打招呼",

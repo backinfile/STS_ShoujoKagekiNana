@@ -99,7 +99,7 @@ public class TextColorPatch {
             if (grayTextStartIndex <= index && index <= grayTextEndIndex) {
                 return Color.GRAY;
             }
-            Log.logger.info("========= index={}", index);
+//            Log.logger.info("========= index={}", index);
             return textColor;
         }
     }
