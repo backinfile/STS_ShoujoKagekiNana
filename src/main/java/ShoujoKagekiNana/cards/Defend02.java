@@ -15,8 +15,8 @@ public class Defend02 extends BaseCard {
 //    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public Defend02() {
-        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
-        this.baseBlock = this.block = 6;
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        this.baseBlock = this.block = 4;
         this.magicNumber = this.baseMagicNumber = 3;
 //        BlockModifierManager.addModifier(this, new InstantBlock());
     }

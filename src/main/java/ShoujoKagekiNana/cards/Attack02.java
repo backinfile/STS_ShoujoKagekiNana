@@ -42,7 +42,7 @@ public class Attack02 extends BaseCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(3);
-//            upgradeMagicNumber(1);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

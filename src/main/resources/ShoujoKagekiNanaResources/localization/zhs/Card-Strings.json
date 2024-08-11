@@ -53,7 +53,11 @@
 	},
 	"ShoujoKagekiNana:Defend02": {
 		"NAME": "腾空",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌，打出其中1张时，弃置其余。"
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌，使它们获得 瞬间 。"
+	},
+	"ShoujoKagekiNana:Whatever": {
+		"NAME": "无论是谁",
+		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 使所有手牌获得 瞬间 。"
 	},
 	"ShoujoKagekiNana:Defend03": {
 		"NAME": "若是无动于衷",
@@ -75,14 +79,13 @@
 	},
 	"ShoujoKagekiNana:JealousRevue": {
 		"NAME": "嫉妒的Revue",
-		"DESCRIPTION": "抽牌直到手牌满， NL 打出其中1张时， NL 弃置其余。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "抽牌直到手牌满， NL 打出其中1张时， NL 弃置其余。",
+		"DESCRIPTION": "抽牌直到手牌满， NL 使他们获得 瞬间 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "抽牌直到手牌满， NL 使他们获得 瞬间 。",
 		"FLAVOR": "夜尽天明，迎来真昼。"
 	},
 	"ShoujoKagekiNana:PassionateRevue": {
 		"NAME": "激情的Revue",
 		"DESCRIPTION": "固有 。 NL 抽 !M! 张牌。",
-		"UPGRADE_DESCRIPTION": "抽牌直到手牌满，打出其中1张时， NL 弃置其余。",
 		"FLAVOR": "歌唱，跳舞，互相争夺吧。"
 	},
 	"ShoujoKagekiNana:PromisedRevue": {
@@ -175,8 +178,8 @@
 	},
 	"ShoujoKagekiNana:Mabuxi": {
 		"NAME": "可能",
-		"DESCRIPTION": "获得 [E] [E] 。 NL 当你打出手牌中的1张牌时，弃置其余。",
-		"UPGRADE_DESCRIPTION": "获得 [E] [E] [E] 。 NL 当你打出手牌中的1张牌时，弃置其余。",
+		"DESCRIPTION": "获得 [E] [E] 。 NL 使所有手牌获得 瞬间 。",
+		"UPGRADE_DESCRIPTION": "获得 [E] [E] [E] 。 NL 使所有手牌获得 瞬间 。",
 		"FLAVOR": "你心中也有吧，耀眼的舞台。"
 	},
 	"D_ShoujoKageki:Promise": {
