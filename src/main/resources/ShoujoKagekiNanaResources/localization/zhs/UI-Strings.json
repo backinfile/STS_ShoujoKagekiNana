@@ -7,7 +7,7 @@
   },
   "ShoujoKagekiNana:StageDiscoveryAction": {
     "TEXT": [
-      "从舞台中shoujokagekinana:发现一张牌",
+      "从舞台中发现一张牌",
       "选择一张牌，使其无法触及"
     ]
   },

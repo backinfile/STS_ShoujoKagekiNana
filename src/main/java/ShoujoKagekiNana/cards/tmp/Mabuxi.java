@@ -1,21 +1,18 @@
-package ShoujoKagekiNana.cards;
+package ShoujoKagekiNana.cards.tmp;
 
-import ShoujoKagekiCore.shine.DisposableVariable;
 import ShoujoKagekiNana.actions.InstantAction;
+import ShoujoKagekiNana.cards.BaseCard;
 import ShoujoKagekiNana.modifiers.InstantModifier;
+import basemod.AutoAdd;
 import basemod.helpers.CardModifierManager;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static ShoujoKagekiNana.ModPath.makeID;
 
-
+@AutoAdd.Ignore
 public class Mabuxi extends BaseCard {
     public static final String ID = makeID(Mabuxi.class.getSimpleName());
 

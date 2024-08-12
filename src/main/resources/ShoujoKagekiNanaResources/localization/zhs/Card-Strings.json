@@ -53,15 +53,11 @@
 	},
 	"ShoujoKagekiNana:Defend02": {
 		"NAME": "腾空",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌，使它们获得 瞬间 。"
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 抽 !M! 张牌，打出其中1张时，弃置其余。"
 	},
 	"ShoujoKagekiNana:Prepare": {
 		"NAME": "舞台准备",
 		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 此牌加入牌组时， NL 牌池中的卡牌伤害+1。"
-	},
-	"ShoujoKagekiNana:Whatever": {
-		"NAME": "无论是谁",
-		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 使所有手牌获得 瞬间 。"
 	},
 	"ShoujoKagekiNana:Defend03": {
 		"NAME": "若是无动于衷",
@@ -83,8 +79,8 @@
 	},
 	"ShoujoKagekiNana:JealousRevue": {
 		"NAME": "嫉妒的Revue",
-		"DESCRIPTION": "抽牌直到手牌满， NL 使他们获得 瞬间 。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "抽牌直到手牌满， NL 使他们获得 瞬间 。",
+		"DESCRIPTION": "抽牌直到手牌满， NL 打出其中1张时， NL 弃置其余。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "抽牌直到手牌满， NL 打出其中1张时， NL 弃置其余。",
 		"FLAVOR": "夜尽天明，迎来真昼。"
 	},
 	"ShoujoKagekiNana:PassionateRevue": {
@@ -139,6 +135,18 @@
 		"DESCRIPTION": "失去所有 易伤 和 虚弱 。 NL 给予所有敌人 !M! 层 易伤 和 虚弱 。 NL 消耗 。",
 		"FLAVOR": ""
 	},
+	"ShoujoKagekiNana:Blossom01": {
+		"NAME": "绽放01",
+		"DESCRIPTION": "抽 !M! 张牌。 NL shoujokagekinana:绽放 : 获得 !B! 点 格挡 。",
+		"UPGRADE_DESCRIPTION": "shoujokagekinana:已绽放 。 NL 抽 !M! 张牌。 NL 获得 !B! 点 格挡 。",
+		"FLAVOR": ""
+	},
+	"ShoujoKagekiNana:Blossom02": {
+		"NAME": "绽放02",
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL shoujokagekinana:绽放 :回合开始时，将此牌放入手牌。",
+		"UPGRADE_DESCRIPTION": "shoujokagekinana:已绽放 。 NL 获得 !B! 点 格挡 。 NL 回合开始时，将此牌放入手牌。",
+		"FLAVOR": ""
+	},
 	"ShoujoKagekiNana:ScatteredStories": {
 		"NAME": "散落的故事",
 		"DESCRIPTION": "shoujokagekinana:发现 1张牌， NL 使其伤害+ !M! 。 NL 消耗 。",
@@ -180,12 +188,6 @@
 		"DESCRIPTION": "不能被打出 。 ",
 		"FLAVOR": "我只想用全力去保护。"
 	},
-	"ShoujoKagekiNana:Mabuxi": {
-		"NAME": "可能",
-		"DESCRIPTION": "获得 [E] [E] 。 NL 使所有手牌获得 瞬间 。",
-		"UPGRADE_DESCRIPTION": "获得 [E] [E] [E] 。 NL 使所有手牌获得 瞬间 。",
-		"FLAVOR": "你心中也有吧，耀眼的舞台。"
-	},
 	"D_ShoujoKageki:Promise": {
 		"NAME": "约定",
 		"DESCRIPTION": "不能被打出 。 NL 回合开始时如果在 约定牌堆 中，获得 [E]",
@@ -193,5 +195,15 @@
 		"EXTENDED_DESCRIPTION": [
 			"这张牌不能被打出。"
 		]
+	},
+	"ShoujoKagekiNana:Mabuxi": {
+		"NAME": "可能",
+		"DESCRIPTION": "获得 [E] [E] 。 NL 使所有手牌获得 瞬间 。",
+		"UPGRADE_DESCRIPTION": "获得 [E] [E] [E] 。 NL 使所有手牌获得 瞬间 。",
+		"FLAVOR": "你心中也有吧，耀眼的舞台。"
+	},
+	"ShoujoKagekiNana:Whatever": {
+		"NAME": "无论是谁",
+		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 使所有手牌获得 瞬间 。"
 	}
 }
