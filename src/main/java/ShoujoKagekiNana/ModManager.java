@@ -142,7 +142,7 @@ public class ModManager implements ISubscriber, EditStringsSubscriber, PostIniti
 
         if (keywords != null) {
             for (Keyword keyword : keywords) {
-                BaseMod.addKeyword(keyword.NAMES[0], keyword.NAMES, keyword.DESCRIPTION);
+                BaseMod.addKeyword(ModPath.ModName.toLowerCase(), keyword.NAMES[0], keyword.NAMES, keyword.DESCRIPTION);
                 Log.logger.info("-----------------add keyword: " + keyword.NAMES[0]);
             }
         }

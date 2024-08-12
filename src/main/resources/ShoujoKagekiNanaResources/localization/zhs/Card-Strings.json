@@ -17,7 +17,7 @@
 	},
 	"ShoujoKagekiNana:Attack04": {
 		"NAME": "劈砍",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 如果此牌为 衍生牌 ， NL 获得 [E] 。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 如果此牌为 shoujokagekicore:衍生牌 ， NL 获得 [E] 。"
 	},
 	"ShoujoKagekiNana:Attack02": {
 		"NAME": "朝向你的所在",
@@ -41,7 +41,7 @@
 	},
 	"ShoujoKagekiNana:Attack08": {
 		"NAME": "在绝望到来之前",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 每有1张 无法触及 的牌，伤害+ !M! 。"
+		"DESCRIPTION": "造成 !D! 点伤害。 NL 每有1张 shoujokagekinana:无法触及 的牌，伤害+ !M! 。"
 	},
 	"ShoujoKagekiNana:Past": {
 		"NAME": "曾经的闪耀",
@@ -104,18 +104,18 @@
 	},
 	"ShoujoKagekiNana:IKnown": {
 		"NAME": "我全都知道哦",
-		"DESCRIPTION": "发现 1张牌，获得获得其伤害或 格挡 数值的 格挡 。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "发现 1张牌，获得获得其伤害或 格挡 数值+ !M! 的 格挡 。 NL 消耗 。",
+		"DESCRIPTION": "shoujokagekinana:发现 1张牌，获得获得其伤害或 格挡 数值的 格挡 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "shoujokagekinana:发现 1张牌，获得获得其伤害或 格挡 数值+ !M! 的 格挡 。 NL 消耗 。",
 		"FLAVOR": ""
 	},
 	"ShoujoKagekiNana:OutOfReach": {
 		"NAME": "无法触及 因而闪耀",
-		"DESCRIPTION": "发现 1张牌，然后使其 无法触及 。 NL 消耗 。",
+		"DESCRIPTION": "shoujokagekinana:发现 1张牌，然后使其 shoujokagekinana:无法触及 。 NL 消耗 。",
 		"FLAVOR": ""
 	},
 	"ShoujoKagekiNana:StageClose": {
 		"NAME": "落幕",
-		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 从3张随机牌中选择1张使其 无法触及 。 NL 消耗 。",
+		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 从3张随机牌中选择1张使其 shoujokagekinana:无法触及 。 NL 消耗 。",
 		"FLAVOR": ""
 	},
 	"ShoujoKagekiNana:Done": {
@@ -125,13 +125,13 @@
 	},
 	"ShoujoKagekiNana:HotBanana": {
 		"NAME": "Hot Banana",
-		"DESCRIPTION": "每回合第一次打出 闪耀 牌时，获得 [E] ，抽 1 张牌。",
+		"DESCRIPTION": "每回合第一次打出 shoujokagekicore:闪耀 牌时，获得 [E] ，抽 1 张牌。",
 		"FLAVOR": ""
 	},
 	"ShoujoKagekiNana:Invite": {
 		"NAME": "长颈鹿的邀请",
-		"DESCRIPTION": "选择1张 衍生牌 加入牌组。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "保留 。 NL 选择1张 衍生牌 加入牌组。 NL 消耗 。",
+		"DESCRIPTION": "选择1张 shoujokagekicore:衍生牌 加入牌组。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "保留 。 NL 选择1张 shoujokagekicore:衍生牌 加入牌组。 NL 消耗 。",
 		"FLAVOR": ""
 	},
 	"ShoujoKagekiNana:GAOU": {
@@ -141,7 +141,7 @@
 	},
 	"ShoujoKagekiNana:ScatteredStories": {
 		"NAME": "散落的故事",
-		"DESCRIPTION": "发现 1张牌， NL 使其伤害+ !M! 。 NL 消耗 。",
+		"DESCRIPTION": "shoujokagekinana:发现 1张牌， NL 使其伤害+ !M! 。 NL 消耗 。",
 		"FLAVOR": ""
 	},
 	"ShoujoKagekiNana:Rondo": {
@@ -161,13 +161,13 @@
 	},
 	"ShoujoKagekiNana:Exist": {
 		"NAME": "很耀眼吗？",
-		"DESCRIPTION": "发现 1张牌，获得与其耗能相等的 [E] 。",
+		"DESCRIPTION": "shoujokagekinana:发现 1张牌，获得与其耗能相等的 [E] 。",
 		"FLAVOR": "真的可以得到任何舞台吗？任何时间的任何舞台都可以吗？"
 	},
 	"ShoujoKagekiNana:OutOfStory": {
 		"NAME": "剧本之外",
-		"DESCRIPTION": "发现 1张牌。 NL 消耗 。",
-		"UPGRADE_DESCRIPTION": "发现 1张牌，这张牌在本回合耗能变为0 。 NL 消耗 。",
+		"DESCRIPTION": "shoujokagekinana:发现 1张牌。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "shoujokagekinana:发现 1张牌，这张牌在本回合耗能变为0 。 NL 消耗 。",
 		"FLAVOR": "这次的再演是怎么回事呢？全是未经历过的事情。"
 	},
 	"ShoujoKagekiNana:WildScreenBaroque": {
