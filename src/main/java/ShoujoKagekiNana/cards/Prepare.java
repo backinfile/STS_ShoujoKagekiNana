@@ -41,7 +41,7 @@ public class Prepare extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(3);
+            upgradeBlock(4);
             initializeDescription();
         }
     }

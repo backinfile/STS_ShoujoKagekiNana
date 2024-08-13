@@ -28,7 +28,13 @@
 	"ShoujoKagekiNana:RondoPower": {
 		"NAME": "轮舞",
 		"DESCRIPTIONS": [
-			"受到攻击伤害时，抽 #y"," 张牌 "
+			"受到攻击时，抽 #y"," 张牌。"
+		]
+	},
+	"ShoujoKagekiNana:Party99Power": {
+		"NAME": "誓师大会",
+		"DESCRIPTIONS": [
+			"每当卡牌绽放时，获得 #y", " 点 格挡 。"
 		]
 	}
 }

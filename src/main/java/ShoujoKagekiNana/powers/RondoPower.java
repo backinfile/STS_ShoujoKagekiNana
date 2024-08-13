@@ -1,7 +1,6 @@
 package ShoujoKagekiNana.powers;
 
 
-import ShoujoKagekiCore.base.BasePower;
 import ShoujoKagekiCore.shine.DisposableVariable;
 import ShoujoKagekiNana.ModPath;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -30,7 +29,9 @@ public class RondoPower extends BasePower {
 
     @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
-        addToBot(new DrawCardAction(amount));
+        if (info.type == DamageInfo.DamageType.NORMAL) {
+            addToBot(new DrawCardAction(amount));
+        }
         return super.onAttacked(info, damageAmount);
     }
 

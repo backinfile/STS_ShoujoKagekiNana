@@ -1,7 +1,6 @@
 package ShoujoKagekiNana.powers;
 
 
-import ShoujoKagekiCore.base.BasePower;
 import ShoujoKagekiCore.shine.DisposableVariable;
 import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.util.Util;

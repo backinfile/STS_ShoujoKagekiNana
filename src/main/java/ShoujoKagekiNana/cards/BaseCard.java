@@ -1,11 +1,8 @@
 package ShoujoKagekiNana.cards;
 
 import ShoujoKagekiCore.util.Utils2;
-import ShoujoKagekiNana.cards.starter.Defend;
-import ShoujoKagekiNana.cards.starter.Strike;
+import ShoujoKagekiNana.cards.tmp.Invite;
 import ShoujoKagekiNana.charactor.NanaCharacter;
-import ShoujoKagekiNana.util.Util;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 
 public abstract class BaseCard extends ShoujoKagekiCore.base.BaseCard {
 

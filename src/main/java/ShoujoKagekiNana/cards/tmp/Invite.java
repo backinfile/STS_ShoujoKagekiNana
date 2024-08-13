@@ -1,11 +1,9 @@
-package ShoujoKagekiNana.cards;
+package ShoujoKagekiNana.cards.tmp;
 
 import ShoujoKagekiCore.token.TokenCardField;
 import ShoujoKagekiNana.actions.CopyHandCardToDeckAction;
-import ShoujoKagekiNana.powers.HotBananaPower;
-import ShoujoKagekiNana.powers.InvitePower;
+import ShoujoKagekiNana.cards.BaseCard;
 import basemod.AutoAdd;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

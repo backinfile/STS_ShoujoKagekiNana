@@ -1,18 +1,18 @@
-package ShoujoKagekiNana.cards;
+package ShoujoKagekiNana.cards.tmp;
 
 import ShoujoKagekiNana.actions.InstantAction;
 import ShoujoKagekiNana.blossom.BlossomField;
+import ShoujoKagekiNana.cards.BlossomCard;
+import basemod.AutoAdd;
 import basemod.BaseMod;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.utility.DrawPileToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static ShoujoKagekiNana.ModPath.makeID;
 
-
+@AutoAdd.Ignore
 public class Blossom02 extends BlossomCard {
     public static final String ID = makeID(Blossom02.class.getSimpleName());
 

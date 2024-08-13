@@ -1,7 +1,6 @@
 package ShoujoKagekiNana.powers;
 
 
-import ShoujoKagekiCore.base.BasePower;
 import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.actions.StageRemoveAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

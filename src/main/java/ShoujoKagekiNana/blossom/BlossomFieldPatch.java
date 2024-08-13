@@ -4,11 +4,13 @@ import ShoujoKagekiCore.shine.DisposableFieldUpgradePatch;
 import ShoujoKagekiCore.shine.DisposableVariable;
 import ShoujoKagekiNana.actions.BlossomAction;
 import ShoujoKagekiNana.cards.BaseCard;
+import ShoujoKagekiNana.powers.BasePower;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import javassist.CtBehavior;
 
@@ -59,6 +61,12 @@ public class BlossomFieldPatch {
         }
         EnergyPanel.useEnergy(1);
         BlossomField.blossomed.set(card, true);
+
+        for (AbstractPower power : AbstractDungeon.player.powers) {
+            if (power instanceof BasePower) {
+                ((BasePower) power).triggerOnBlossom();
+            }
+        }
     }
 
 //    @SpirePatch(

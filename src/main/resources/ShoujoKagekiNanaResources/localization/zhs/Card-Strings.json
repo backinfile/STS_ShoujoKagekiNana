@@ -11,16 +11,17 @@
 		"NAME": "闪耀打击",
 		"DESCRIPTION": "造成 !D! 点伤害。"
 	},
-	"ShoujoKagekiNana:Attack06": {
-		"NAME": "我会替你全部承担",
-		"DESCRIPTION": "造成 !D! 点伤害。 NL 牌池中的卡牌伤害+1。 NL 消耗 。"
+	"ShoujoKagekiNana:Attack02": {
+		"NAME": "朝向你的所在",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL shoujokagekinana:绽放 : 立即获得一张此牌的复制 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "shoujokagekinana:已绽放 。 NL 造成 !D! 点伤害。 NL 消耗 。"
 	},
 	"ShoujoKagekiNana:Attack04": {
 		"NAME": "劈砍",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 如果此牌为 shoujokagekicore:衍生牌 ， NL 获得 [E] 。"
 	},
-	"ShoujoKagekiNana:Attack02": {
-		"NAME": "朝向你的所在",
+	"ShoujoKagekiNana:Attack06": {
+		"NAME": "我会替你全部承担",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 易伤 。"
 	},
 	"ShoujoKagekiNana:Attack03": {
@@ -114,8 +115,8 @@
 		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 从3张随机牌中选择1张使其 shoujokagekinana:无法触及 。 NL 消耗 。",
 		"FLAVOR": ""
 	},
-	"ShoujoKagekiNana:Done": {
-		"NAME": "烹饪完成",
+	"ShoujoKagekiNana:Prepare2": {
+		"NAME": "讨论剧情",
 		"DESCRIPTION": "获得 !B! 点 格挡 。 NL 牌池中的卡牌伤害+1。 NL 消耗 。",
 		"FLAVOR": ""
 	},
@@ -137,8 +138,8 @@
 	},
 	"ShoujoKagekiNana:Blossom01": {
 		"NAME": "绽放01",
-		"DESCRIPTION": "抽 !M! 张牌。 NL shoujokagekinana:绽放 : 获得 !B! 点 格挡 。",
-		"UPGRADE_DESCRIPTION": "shoujokagekinana:已绽放 。 NL 抽 !M! 张牌。 NL 获得 !B! 点 格挡 。",
+		"DESCRIPTION": "抽 !M! 张牌。 NL shoujokagekinana:绽放 : 然后获得 !B! 点 格挡 。",
+		"UPGRADE_DESCRIPTION": "shoujokagekinana:已绽放 。 NL 抽 !M! 张牌。 NL 然后获得 !B! 点 格挡 。",
 		"FLAVOR": ""
 	},
 	"ShoujoKagekiNana:Blossom02": {
@@ -154,7 +155,7 @@
 	},
 	"ShoujoKagekiNana:Rondo": {
 		"NAME": "轮舞",
-		"DESCRIPTION": "本回合内，目标敌人受到攻击伤害时，抽 !M! 张牌 。 NL 消耗 。",
+		"DESCRIPTION": "本回合内，目标敌人受到攻击时，抽 !M! 张牌 。 NL 消耗 。",
 		"FLAVOR": ""
 	},
 	"ShoujoKagekiNana:Jump": {
@@ -205,5 +206,9 @@
 	"ShoujoKagekiNana:Whatever": {
 		"NAME": "无论是谁",
 		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 使所有手牌获得 瞬间 。"
+	},
+	"ShoujoKagekiNana:Party99": {
+		"NAME": "誓师大会",
+		"DESCRIPTION": "每当你的卡牌 shoujokagekinana:绽放 时，获得 !M! 点 格挡 。"
 	}
 }

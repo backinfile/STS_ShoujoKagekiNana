@@ -6,6 +6,7 @@ import ShoujoKagekiNana.actions.StageCardSinglePowerUpAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -21,28 +22,37 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import static ShoujoKagekiNana.ModPath.makeID;
 
 
-public class Attack02 extends BaseCard {
+public class Attack02 extends BlossomCard {
     public static final String ID = makeID(Attack02.class.getSimpleName());
 
     public Attack02() {
-        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = 9;
-        this.magicNumber = this.baseMagicNumber = 2;
-        DisposableVariable.setBaseValue(this, 9);
+        super(ID, 0, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        baseDamage = 6;
+//        this.magicNumber = this.baseMagicNumber = 2;
+//        DisposableVariable.setBaseValue(this, 9);
+        exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
+//        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
+    }
+
+    @Override
+    public void triggerBlossom() {
+        super.triggerBlossom();
+        this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        initializeDescription();
+        addToBot(new MakeTempCardInHandAction(this.makeStatEquivalentCopy()));
     }
 
     @Override
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(3);
-            upgradeMagicNumber(1);
+            upgradeDamage(2);
+//            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

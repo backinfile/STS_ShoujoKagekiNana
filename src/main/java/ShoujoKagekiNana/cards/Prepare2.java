@@ -3,18 +3,16 @@ package ShoujoKagekiNana.cards;
 import ShoujoKagekiCore.shine.DisposableVariable;
 import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.actions.StageCardPowerUpAction;
-import ShoujoKagekiNana.actions.StageDiscoveryAction;
-import ShoujoKagekiNana.modifiers.AddBlockModifier;
 import ShoujoKagekiNana.modifiers.AddDamageModifier;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Done extends BaseCard {
-    public static final String ID = ModPath.makeID(Done.class.getSimpleName());
+public class Prepare2 extends BaseCard {
+    public static final String ID = ModPath.makeID(Prepare2.class.getSimpleName());
 
-    public Done() {
+    public Prepare2() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseBlock = this.block = 6;
         exhaust = true;

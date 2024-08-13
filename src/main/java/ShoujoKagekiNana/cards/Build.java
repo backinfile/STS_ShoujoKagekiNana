@@ -28,7 +28,7 @@ public class Build extends BaseCard {
 
     public Build() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
-        baseDamage = 9;
+        baseDamage = 8;
         DisposableVariable.setBaseValue(this, 9);
 //        this.tags.add(CardTags.HEALING);
 
@@ -52,7 +52,7 @@ public class Build extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(3);
+            upgradeDamage(4);
             initializeDescription();
         }
     }
