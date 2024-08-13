@@ -1,12 +1,15 @@
 package ShoujoKagekiNana.blossom;
 
-import ShoujoKagekiCore.shine.DisposableFieldUpgradePatch;
-import ShoujoKagekiCore.shine.DisposableVariable;
+import ShoujoKagekiCore.base.BasePlayer;
 import ShoujoKagekiNana.actions.BlossomAction;
 import ShoujoKagekiNana.cards.BaseCard;
+import ShoujoKagekiNana.charactor.NanaCharacter;
 import ShoujoKagekiNana.powers.BasePower;
+import basemod.ReflectionHacks;
+import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
@@ -14,16 +17,37 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import javassist.CtBehavior;
 
+import java.util.function.Consumer;
+
 
 public class BlossomFieldPatch {
 
-//    @SpirePatch(clz = AbstractCard.class, method = "triggerOnGlowCheck")
-//    public static class MakeStatEquivalentCopy {
-//        public static void Prefix(AbstractCard __instance) {
-//            if (!BlossomField.blossom.get(__instance)) return;
-//
-//        }
-//    }
+    private static final Color BlossomGlowColor = new Color(1f, 0.5f, 0f, 0.25f);
+    private static final Color BlossomGlowColor_CANNOTUSE = new Color(1f, 0.5f, 0f, 0.1f);
+
+    @SpirePatch(clz = CardGroup.class, method = "glowCheck")
+    public static class _Patch {
+        public static void Postfix(CardGroup __instance) {
+            if (AbstractDungeon.screen == AbstractDungeon.CurrentScreen.HAND_SELECT) return;
+            if (!(AbstractDungeon.player instanceof BasePlayer)) return;
+
+            for (AbstractCard card : __instance.group) {
+                if (!BlossomField.isBlossomCard(card)) continue;
+                if (BlossomFieldPatch.canTriggerBlossom(card)) {
+                    if (card.isGlowing) {
+                        card.glowColor = BlossomGlowColor.cpy();
+                    } else {
+                        card.glowColor = BlossomGlowColor_CANNOTUSE.cpy();
+                        card.beginGlowing();
+                    }
+                } else {
+                    if (card.glowColor.equals(BlossomGlowColor) || card.glowColor.equals(BlossomGlowColor_CANNOTUSE)) {
+                        card.glowColor = ReflectionHacks.getPrivateStatic(AbstractCard.class, "BLUE_BORDER_GLOW_COLOR");
+                    }
+                }
+            }
+        }
+    }
 
 
     @SpirePatch2(
@@ -57,12 +81,22 @@ public class BlossomFieldPatch {
         if (!BlossomField.blossom.get(card)) return;
         if (BlossomField.blossomed.get(card)) return;
 
+        // before
         BlossomField.blossomed.set(card, true);
-        if (card instanceof BaseCard) {
-            ((BaseCard) card).triggerBlossom();
-        }
-        EnergyPanel.useEnergy(1);
 
+        // trigger
+        Consumer<AbstractCard> func = BlossomField.blossomFunc.get(card);
+        if (func != null) {
+            func.accept(card);
+        }
+        // replace description
+        if (BlossomField.blossomFuncChangeDescDefault.get(card) && card instanceof BaseCard) {
+            card.rawDescription = ((BaseCard) card).cardStrings.UPGRADE_DESCRIPTION;
+            card.initializeDescription();
+        }
+
+        // afater
+        EnergyPanel.useEnergy(1);
         for (AbstractPower power : AbstractDungeon.player.powers) {
             if (power instanceof BasePower) {
                 ((BasePower) power).triggerOnBlossom();

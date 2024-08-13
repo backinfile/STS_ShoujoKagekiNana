@@ -9,13 +9,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static ShoujoKagekiNana.ModPath.makeID;
 
 
-public class Banana extends BlossomCard {
+public class Banana extends BaseCard {
     public static final String ID = makeID(Banana.class.getSimpleName());
 
     public Banana() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseBlock = 5;
         this.magicNumber = this.baseMagicNumber = 3;
+        BlossomField.set(this, null);
     }
 
     @Override
@@ -24,13 +25,6 @@ public class Banana extends BlossomCard {
             addToBot(new GainBlockAction(p, p, block));
         }
         addToBot(new DrawCardAction(magicNumber));
-    }
-
-    @Override
-    public void triggerBlossom() {
-        super.triggerBlossom();
-        this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-        initializeDescription();
     }
 
     @Override

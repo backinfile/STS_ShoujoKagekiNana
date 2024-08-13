@@ -1,7 +1,7 @@
 package ShoujoKagekiNana.stagePool.patches;
 
 import ShoujoKagekiNana.Log;
-import ShoujoKagekiNana.cards.EmptyStage;
+import ShoujoKagekiNana.cards.curse.EmptyStage;
 import ShoujoKagekiNana.charactor.NanaCharacter;
 import ShoujoKagekiNana.stagePool.StagePoolManager;
 import basemod.ReflectionHacks;

@@ -2,7 +2,7 @@ package ShoujoKagekiNana.cards.tmp;
 
 import ShoujoKagekiNana.actions.InstantAction;
 import ShoujoKagekiNana.blossom.BlossomField;
-import ShoujoKagekiNana.cards.BlossomCard;
+import ShoujoKagekiNana.cards.BaseCard;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static ShoujoKagekiNana.ModPath.makeID;
 
 @AutoAdd.Ignore
-public class Blossom02 extends BlossomCard {
+public class Blossom02 extends BaseCard {
     public static final String ID = makeID(Blossom02.class.getSimpleName());
 
     public Blossom02() {
@@ -26,12 +26,12 @@ public class Blossom02 extends BlossomCard {
         addToBot(new GainBlockAction(p, p, block));
     }
 
-    @Override
-    public void triggerBlossom() {
-        super.triggerBlossom();
-        this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-        initializeDescription();
-    }
+//    @Override
+//    public void triggerBlossom() {
+//        super.triggerBlossom();
+//        this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+//        initializeDescription();
+//    }
 
     @Override
     public void upgrade() {

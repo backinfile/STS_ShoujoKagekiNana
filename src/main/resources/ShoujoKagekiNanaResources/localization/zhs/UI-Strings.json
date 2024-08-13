@@ -56,5 +56,10 @@
     "TEXT": ["再演？", "如果回合结束时此牌仍留在手中，则转化为 #y*", "再演", " 。"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
+  },
+  "ShoujoKagekiNana:AddBlossomDraw2Modifier": {
+    "TEXT": [" NL shoujokagekinana:绽放 ：再抽2张牌。", "shoujokagekinana:已绽放 NL ", " NL 再抽2张牌。"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
   }
 }

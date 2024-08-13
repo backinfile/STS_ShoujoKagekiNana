@@ -3,6 +3,7 @@ package ShoujoKagekiNana.cards;
 import ShoujoKagekiCore.shine.DisposableVariable;
 import ShoujoKagekiNana.actions.DamageCallbackAction;
 import ShoujoKagekiNana.actions.StageCardSinglePowerUpAction;
+import ShoujoKagekiNana.blossom.BlossomField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -22,7 +23,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import static ShoujoKagekiNana.ModPath.makeID;
 
 
-public class Attack02 extends BlossomCard {
+public class Attack02 extends BaseCard {
     public static final String ID = makeID(Attack02.class.getSimpleName());
 
     public Attack02() {
@@ -31,20 +32,16 @@ public class Attack02 extends BlossomCard {
 //        this.magicNumber = this.baseMagicNumber = 2;
 //        DisposableVariable.setBaseValue(this, 9);
         exhaust = true;
+
+        BlossomField.set(this, card -> {
+            addToBot(new MakeTempCardInHandAction(card.makeStatEquivalentCopy()));
+        });
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 //        addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false)));
-    }
-
-    @Override
-    public void triggerBlossom() {
-        super.triggerBlossom();
-        this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-        initializeDescription();
-        addToBot(new MakeTempCardInHandAction(this.makeStatEquivalentCopy()));
     }
 
     @Override

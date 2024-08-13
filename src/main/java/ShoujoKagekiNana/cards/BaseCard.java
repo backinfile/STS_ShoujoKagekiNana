@@ -24,9 +24,6 @@ public abstract class BaseCard extends ShoujoKagekiCore.base.BaseCard {
         }
     }
 
-    public void triggerBlossom() {
-
-    }
 
     @Override
     public void loadCardImage(String img) {

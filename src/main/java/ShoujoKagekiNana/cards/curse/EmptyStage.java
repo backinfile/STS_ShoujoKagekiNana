@@ -1,9 +1,6 @@
-package ShoujoKagekiNana.cards;
+package ShoujoKagekiNana.cards.curse;
 
-import ShoujoKagekiCore.shine.DisposableVariable;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import ShoujoKagekiNana.cards.BaseCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
