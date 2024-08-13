@@ -50,8 +50,10 @@ public class StagePoolManager {
             cardPool.sort((card, card2) -> {
                 int c1 = card.rarity.compareTo(card2.rarity);
                 if (c1 != 0) return c1;
-                int c2 = card.cost - card2.cost;
+                int c2 = card.type.compareTo(card2.type);
                 if (c2 != 0) return c2;
+                int c3 = card.cost - card2.cost;
+                if (c3 != 0) return c3;
                 return card.cardID.compareTo(card2.cardID);
             });
             afterLoadCardPool();

@@ -1,12 +1,10 @@
-package ShoujoKagekiNana.cards;
+package ShoujoKagekiNana.cards.discorvery;
 
 import ShoujoKagekiNana.ModPath;
-import ShoujoKagekiNana.actions.StageCardPowerUpAction;
-import ShoujoKagekiNana.actions.StageCardSinglePowerUpAction;
 import ShoujoKagekiNana.actions.StageDiscoveryAction;
+import ShoujoKagekiNana.cards.BaseCard;
 import ShoujoKagekiNana.modifiers.AddDamageModifier;
 import basemod.helpers.CardModifierManager;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 

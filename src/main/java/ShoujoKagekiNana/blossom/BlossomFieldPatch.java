@@ -56,11 +56,12 @@ public class BlossomFieldPatch {
     public static void triggerBlossom(AbstractCard card) {
         if (!BlossomField.blossom.get(card)) return;
         if (BlossomField.blossomed.get(card)) return;
+
+        BlossomField.blossomed.set(card, true);
         if (card instanceof BaseCard) {
             ((BaseCard) card).triggerBlossom();
         }
         EnergyPanel.useEnergy(1);
-        BlossomField.blossomed.set(card, true);
 
         for (AbstractPower power : AbstractDungeon.player.powers) {
             if (power instanceof BasePower) {

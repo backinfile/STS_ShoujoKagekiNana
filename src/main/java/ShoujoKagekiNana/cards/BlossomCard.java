@@ -22,7 +22,7 @@ public abstract class BlossomCard extends BaseCard {
     @Override
     public void triggerOnGlowCheck() {
         if (BlossomFieldPatch.canTriggerBlossom(this)) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+            this.glowColor = AbstractCard.GREEN_BORDER_GLOW_COLOR.cpy();
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
