@@ -14,7 +14,7 @@ public class ScatteredStories extends BaseCard {
     public static final String ID = ModPath.makeID(ScatteredStories.class.getSimpleName());
 
     public ScatteredStories() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         exhaust = true;
         this.magicNumber = this.baseMagicNumber = 3;
 //        this.tags.add(CardTags.HEALING);
@@ -37,7 +37,7 @@ public class ScatteredStories extends BaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(2);
+            this.upgradeMagicNumber(3);
             initializeDescription();
         }
     }

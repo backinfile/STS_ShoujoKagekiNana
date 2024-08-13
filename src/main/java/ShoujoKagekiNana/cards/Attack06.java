@@ -28,7 +28,7 @@ public class Attack06 extends BaseCard {
     public static final String ID = makeID(Attack06.class.getSimpleName());
 
     public Attack06() {
-        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 6;
         this.magicNumber = this.baseMagicNumber = 2;
         DisposableVariable.setBaseValue(this, 9);

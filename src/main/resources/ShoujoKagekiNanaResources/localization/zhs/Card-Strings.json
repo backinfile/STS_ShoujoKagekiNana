@@ -164,7 +164,7 @@
 		"FLAVOR": ""
 	},
 	"ShoujoKagekiNana:Build": {
-		"NAME": "高塔建立之时",
+		"NAME": "加固星之塔",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 此牌加入牌组时， NL 牌池中的卡牌伤害+1。",
 		"FLAVOR": "如饥似渴地追求新的舞台，这就是舞台少女。"
 	},
@@ -206,6 +206,11 @@
 	"ShoujoKagekiNana:Whatever": {
 		"NAME": "无论是谁",
 		"DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 使所有手牌获得 瞬间 。"
+	},
+	"ShoujoKagekiNana:Repeat": {
+		"NAME": "再演",
+		"DESCRIPTION": "shoujokagekinana:发现 1 张牌， 如果回合结束时该牌仍留在手中，将其转化为 *再演 。 NL 消耗 。",
+		"UPGRADE_DESCRIPTION": "shoujokagekinana:发现 1 张牌， 如果回合结束时该牌仍留在手中，将其转化为 *再演+ 。 NL 保留 。 消耗 。"
 	},
 	"ShoujoKagekiNana:Party99": {
 		"NAME": "誓师大会",

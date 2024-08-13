@@ -26,7 +26,7 @@ public class Stay extends BaseCard {
     public static final String ID = makeID(Stay.class.getSimpleName());
 
     public Stay() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         baseBlock = 8;
 //        DisposableVariable.setBaseValue(this, 9);
         grayTextStartIndex = 1;

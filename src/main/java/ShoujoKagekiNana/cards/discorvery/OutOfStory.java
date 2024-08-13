@@ -10,7 +10,7 @@ public class OutOfStory extends BaseCard {
     public static final String ID = ModPath.makeID(OutOfStory.class.getSimpleName());
 
     public OutOfStory() {
-        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
+        super(ID, 0, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         exhaust = true;
     }
 
