@@ -44,6 +44,11 @@
 		"NAME": "在绝望到来之前",
 		"DESCRIPTION": "造成 !D! 点伤害。 NL 每有1张 shoujokagekinana:无法触及 的牌，伤害+ !M! 。"
 	},
+	"ShoujoKagekiNana:Attack10": {
+		"NAME": "只有这种程度吗？",
+		"DESCRIPTION": "造成 !D! 点伤害。 NL shoujokagekinana:绽放 ：再造成 !M! 点伤害 。",
+		"UPGRADE_DESCRIPTION": "shoujokagekinana:已绽放 。 NL 造成 !D! 点伤害。 NL 再造成 !M! 点伤害 。"
+	},
 	"ShoujoKagekiNana:Past": {
 		"NAME": "曾经的闪耀",
 		"DESCRIPTION": "造成 !D! 点伤害两次 。"

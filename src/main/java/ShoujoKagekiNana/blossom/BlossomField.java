@@ -21,14 +21,14 @@ public class BlossomField {
     public static SpireField<Boolean> blossomFuncChangeDescDefault = new SpireField<>(() -> false);
 
 
-    public static void set(AbstractCard card, Consumer<AbstractCard> func, boolean changeDescription) {
+    public static void set(AbstractCard card, Consumer<AbstractCard> triggerWhenBlossom, boolean changeDescription) {
         blossom.set(card, true);
-        blossomFunc.set(card, func);
+        blossomFunc.set(card, triggerWhenBlossom);
         blossomFuncChangeDescDefault.set(card, changeDescription);
     }
 
-    public static void set(AbstractCard card, Consumer<AbstractCard> func) {
-        set(card, func, true);
+    public static void set(AbstractCard card, Consumer<AbstractCard> triggerWhenBlossom) {
+        set(card, triggerWhenBlossom, true);
     }
 
     public static boolean isBlossomCard(AbstractCard card) {
