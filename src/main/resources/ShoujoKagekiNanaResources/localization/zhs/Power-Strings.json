@@ -40,7 +40,7 @@
 	"ShoujoKagekiNana:BananicePower": {
 		"NAME": "Bananice",
 		"DESCRIPTIONS": [
-			"回合开始时， 为随机 #y", " 张非 #y绽放 牌添加 NL \" #y绽放 : 再抽 2 张牌\"。"
+			"回合开始时， 为随机 #y", " 张非 #y绽放 牌添加 \" #y绽放 : 再抽 2 张牌\"。"
 		]
 	}
 }

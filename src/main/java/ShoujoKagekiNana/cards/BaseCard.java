@@ -6,6 +6,8 @@ import ShoujoKagekiNana.charactor.NanaCharacter;
 
 public abstract class BaseCard extends ShoujoKagekiCore.base.BaseCard {
 
+    public String singleCardAudioKey = null;
+
     public boolean enableGrayText = false;
     public int grayTextStartIndex = -1;
     public int grayTextEndIndex = -1;

@@ -1,6 +1,7 @@
 package ShoujoKagekiNana.cards;
 
 import ShoujoKagekiCore.shine.DisposableVariable;
+import ShoujoKagekiNana.AudioManager;
 import ShoujoKagekiNana.ModPath;
 import ShoujoKagekiNana.actions.StageCardPowerUpAction;
 import ShoujoKagekiNana.modifiers.AddDamageModifier;
@@ -18,6 +19,7 @@ public class PassionateRevue extends BaseCard {
         isInnate = true;
         this.magicNumber = this.baseMagicNumber = 3;
         DisposableVariable.setBaseValue(this, 9);
+        this.singleCardAudioKey = AudioManager.PassionateRevue;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

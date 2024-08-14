@@ -61,5 +61,10 @@
     "TEXT": [" NL shoujokagekinana:绽放 ：再抽2张牌。", "shoujokagekinana:已绽放 NL ", " NL 再抽2张牌。"],
     "EXTRA_TEXT": ["demo EXTRA_TEXT"],
     "TEXT_DICT": {}
+  },
+  "ShoujoKagekiNana:AudioPatch": {
+    "TEXT": [" NL NL (按V键播放语音)"],
+    "EXTRA_TEXT": ["demo EXTRA_TEXT"],
+    "TEXT_DICT": {}
   }
 }

@@ -28,7 +28,7 @@ import java.nio.charset.StandardCharsets;
 @SpireInitializer
 @SpireSideload(modIDs = "ShoujoKagekiCore")
 public class ModManager implements ISubscriber, EditStringsSubscriber, PostInitializeSubscriber,
-        EditCharactersSubscriber, EditCardsSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber {
+        EditCharactersSubscriber, EditCardsSubscriber, EditKeywordsSubscriber, EditRelicsSubscriber, AddAudioSubscriber {
     public static final Logger logger = LogManager.getLogger(ModPath.ModName);
 
     private static String modID;
@@ -167,6 +167,13 @@ public class ModManager implements ISubscriber, EditStringsSubscriber, PostIniti
         });
         Log.logger.info("Done adding relics!");
     }
+
+
+    @Override
+    public void receiveAddAudio() {
+        AudioManager.init();
+    }
+
 
     // ====== NO EDIT AREA ======
     // DON'T TOUCH THIS STUFF. IT IS HERE FOR STANDARDIZATION BETWEEN MODS AND TO
