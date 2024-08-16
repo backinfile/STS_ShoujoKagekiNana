@@ -1,5 +1,6 @@
 package ShoujoKagekiNana.powers;
 
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
 public class BasePower extends ShoujoKagekiCore.base.BasePower {
@@ -7,7 +8,7 @@ public class BasePower extends ShoujoKagekiCore.base.BasePower {
         super(ID, powerType, owner, source, amount);
     }
 
-    public void triggerOnBlossom() {
+    public void triggerOnBlossom(AbstractCard card) {
         
     }
 }

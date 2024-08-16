@@ -29,7 +29,7 @@ public class Mabuxi extends BaseCard {
         if (BlossomField.isBlossomed(this)) {
             addToBot(new GainEnergyAction(magicNumber));
         } else {
-            addToBot(new DrawCardAction(3));
+            addToBot(new DrawCardAction(defaultSecondMagicNumber));
         }
     }
 
@@ -37,7 +37,8 @@ public class Mabuxi extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(1);
+//            upgradeMagicNumber(1);
+            upgradeDefaultSecondMagicNumber(1);
             initializeDescription();
         }
     }

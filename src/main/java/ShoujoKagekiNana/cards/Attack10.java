@@ -19,7 +19,7 @@ public class Attack10 extends BaseCard {
     public Attack10() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 10;
-        this.magicNumber = this.baseMagicNumber = 6;
+        this.magicNumber = this.baseMagicNumber = 5;
 //        DisposableVariable.setBaseValue(this, 9);
         BlossomField.set(this, null);
     }
@@ -70,8 +70,8 @@ public class Attack10 extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-//            upgradeDamage(3);
-            upgradeMagicNumber(4);
+            upgradeDamage(4);
+//            upgradeMagicNumber(4);
             initializeDescription();
         }
     }

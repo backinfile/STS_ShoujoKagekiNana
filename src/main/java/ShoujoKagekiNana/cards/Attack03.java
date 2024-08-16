@@ -41,7 +41,7 @@ public class Attack03 extends BaseCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeDamage(5);
+            upgradeDamage(4);
 //            upgradeMagicNumber(1);
             initializeDescription();
         }

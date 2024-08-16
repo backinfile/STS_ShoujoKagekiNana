@@ -37,10 +37,16 @@
 			"每当卡牌绽放时，获得 #y", " 点 格挡 。"
 		]
 	},
-	"ShoujoKagekiNana:BananicePower": {
+	"ShoujoKagekiNana:BananicePower_tmp": {
 		"NAME": "Bananice",
 		"DESCRIPTIONS": [
 			"回合开始时， 为随机 #y", " 张非 #y绽放 牌添加 \" #y绽放 : 再抽 2 张牌\"。"
+		]
+	},
+	"ShoujoKagekiNana:BananicePower": {
+		"NAME": "Bananice",
+		"DESCRIPTIONS": [
+			"#y绽放 不再需要消耗能量。 NL #y绽放 一张牌时，将其放到抽牌堆的顶部。"
 		]
 	}
 }

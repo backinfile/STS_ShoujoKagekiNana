@@ -2,10 +2,6 @@ package ShoujoKagekiNana.powers;
 
 
 import ShoujoKagekiNana.ModPath;
-import ShoujoKagekiNana.actions.InstantAction;
-import ShoujoKagekiNana.modifiers.InstantModifier;
-import basemod.helpers.CardModifierManager;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -24,7 +20,7 @@ public class Party99Power extends BasePower {
     }
 
     @Override
-    public void triggerOnBlossom() {
+    public void triggerOnBlossom(AbstractCard card) {
         flash();
         addToBot(new GainBlockAction(AbstractDungeon.player, amount));
     }

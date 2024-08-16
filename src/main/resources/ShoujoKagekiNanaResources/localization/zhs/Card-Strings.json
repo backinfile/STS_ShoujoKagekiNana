@@ -221,8 +221,12 @@
 		"NAME": "誓师大会",
 		"DESCRIPTION": "每当你的卡牌 shoujokagekinana:绽放 时，获得 !M! 点 格挡 。"
 	},
-	"ShoujoKagekiNana:Bananice": {
+	"ShoujoKagekiNana:Bananice_tmp": {
 		"NAME": "Bananice",
 		"DESCRIPTION": "回合开始时， 为随机 !M! 张非 shoujokagekinana:绽放 牌添加 NL \" shoujokagekinana:绽放 : 再抽 2 张牌\"。"
+	},
+	"ShoujoKagekiNana:Bananice": {
+		"NAME": "Bananice",
+		"DESCRIPTION": "shoujokagekinana:绽放 不再消耗能量。 NL shoujokagekinana:绽放 一张牌时， NL 将其放到抽牌堆的顶部。"
 	}
 }
